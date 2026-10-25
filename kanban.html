@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Kanban-Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/kanban.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Kanban-Dashboard</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Vom Plan zum Fortschritt.</h1>
+          <p class="page-description">CampusCycle - Sprint 2: Der erste nutzbare Prototyp</p>
+        </div>
+        <button class="btn-primary">
+          <i class="fa-solid fa-plus"></i> Aufgabe erstellen
+        </button>
+      </div>
+
+      <!-- SPRINT BANNER -->
+      <div class="sprint-card">
+        <div>
+          <div class="sprint-info-group">
+            <span class="sprint-title">Sprint 2</span>
+            <span class="badge-active">Aktiv</span>
+          </div>
+          <div class="sprint-dates">12.–23. Oktober 2026 · noch 10 Tage</div>
+        </div>
+
+        <div class="progress-section">
+          <div class="progress-labels">
+            <span>Projektfortschritt <strong>15 / 24 erledigt - 63 %</strong></span>
+          </div>
+          <div class="sprint-progress-bar">
+            <div class="sprint-progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="sprint-stat-box">
+          <div>
+            <div class="stat-number">9</div>
+            <div class="stat-text">noch offen</div>
+          </div>
+          <button class="btn-sprint-goal">
+            <i class="fa-solid fa-bullseye" style="color:#0284c7;"></i> Sprint-Ziel
+          </button>
+        </div>
+      </div>
+
+      <!-- TOOLBAR -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="search-input" placeholder="Aufgaben durchsuchen">
+          </div>
+          <button class="btn-filter">
+            <i class="fa-regular fa-user"></i> Alle Mitglieder
+          </button>
+          <button class="btn-filter">
+            <i class="fa-solid fa-sliders"></i> Filter
+          </button>
+        </div>
+
+        <div class="toolbar-right">
+          <span>Gruppierung: Status</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+        </div>
+      </div>
+
+      <!-- KANBAN BOARD GRID -->
+      <div class="kanban-grid">
+        
+        <!-- COLUMN 1: OFFEN -->
+        <div class="kanban-col">
+          <div class="col-header">
+            <div class="col-title-group">
+              <span class="col-dot dot-offen"></span>
+              <span>Offen</span>
+              <span class="col-count">4</span>
+            </div>
+            <button class="btn-col-add"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <!-- TASK CC-21 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-21</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Ausleihbedingungen formulieren</div>
+            <div class="task-tags">
+              <span class="tag tag-konzept">Konzept</span>
+              <span class="tag-prio-mittel"><i class="fa-solid fa-arrows-left-right"></i> Mittel</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>16. Okt.</span>
+                <span><i class="fa-regular fa-comment"></i> 2</span>
+              </div>
+              <div class="task-user">LH</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-22 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-22</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Reparaturtermine planen</div>
+            <div class="task-tags">
+              <span class="tag tag-org">Organisation</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>18. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 0/3</span>
+              </div>
+              <div class="task-user" style="background:#fce7f3; color:#db2777;">MS</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-23 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-23</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Benachrichtigungen anbinden</div>
+            <div class="task-tags">
+              <span class="tag tag-backend">Backend</span>
+              <span class="tag-prio-mittel"><i class="fa-solid fa-arrows-left-right"></i> Mittel</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>20. Okt.</span>
+              </div>
+              <div class="task-user" style="background:#fef3c7; color:#d97706;">AY</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-24 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-24</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Demo-Präsentation vorbereiten</div>
+            <div class="task-tags">
+              <span class="tag tag-org">Organisation</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>23. Okt.</span>
+                <span><i class="fa-regular fa-comment"></i> 1</span>
+              </div>
+              <div class="task-user" style="background:#fce7f3; color:#db2777;">MS</div>
+            </div>
+          </div>
+
+          <div class="add-task-inline">
+            <i class="fa-solid fa-plus"></i> Aufgabe hinzufügen
+          </div>
+        </div>
+
+        <!-- COLUMN 2: IN ARBEIT -->
+        <div class="kanban-col">
+          <div class="col-header">
+            <div class="col-title-group">
+              <span class="col-dot dot-arbeit"></span>
+              <span>In Arbeit</span>
+              <span class="col-count">3</span>
+            </div>
+            <button class="btn-col-add"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <!-- TASK CC-16 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-16</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Fahrradübersicht entwickeln</div>
+            <div class="task-tags">
+              <span class="tag tag-frontend">Frontend</span>
+              <span class="tag-prio-hoch"><i class="fa-solid fa-arrow-up"></i> Hoch</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>15. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 2/4</span>
+                <span><i class="fa-regular fa-comment"></i> 3</span>
+              </div>
+              <div class="task-user" style="background:#dcfce7; color:#15803d;">JW</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-17 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-17</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Buchungs-API implementieren</div>
+            <div class="task-tags">
+              <span class="tag tag-backend">Backend</span>
+              <span class="tag-prio-hoch"><i class="fa-solid fa-arrow-up"></i> Hoch</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>16. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 1/3</span>
+                <span><i class="fa-regular fa-comment"></i> 2</span>
+              </div>
+              <div class="task-user" style="background:#fef3c7; color:#d97706;">AY</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-18 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-18</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Usability-Test vorbereiten</div>
+            <div class="task-tags">
+              <span class="tag tag-research">Research</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>17. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 2/5</span>
+              </div>
+              <div class="task-user">LH</div>
+            </div>
+          </div>
+
+          <div class="add-task-inline">
+            <i class="fa-solid fa-plus"></i> Aufgabe hinzufügen
+          </div>
+        </div>
+
+        <!-- COLUMN 3: IN REVIEW -->
+        <div class="kanban-col">
+          <div class="col-header">
+            <div class="col-title-group">
+              <span class="col-dot dot-review"></span>
+              <span>In Review</span>
+              <span class="col-count">2</span>
+            </div>
+            <button class="btn-col-add"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <!-- TASK CC-19 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-19</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Login & Registrierung testen</div>
+            <div class="task-tags">
+              <span class="tag tag-backend">Backend</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>14. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 4/4</span>
+                <span><i class="fa-regular fa-comment"></i> 4</span>
+              </div>
+              <div class="task-user" style="background:#fef3c7; color:#d97706;">AY</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-20 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-20</span>
+              <i class="fa-solid fa-ellipsis" style="color:#94a3b8;"></i>
+            </div>
+            <div class="task-title">Mobile Ansichten prüfen</div>
+            <div class="task-tags">
+              <span class="tag tag-frontend">Frontend</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span>14. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 3/3</span>
+                <span><i class="fa-regular fa-comment"></i> 2</span>
+              </div>
+              <div class="task-user" style="background:#dcfce7; color:#15803d;">JW</div>
+            </div>
+          </div>
+
+          <div class="add-task-inline">
+            <i class="fa-solid fa-plus"></i> Aufgabe hinzufügen
+          </div>
+        </div>
+
+        <!-- COLUMN 4: ERLEDIGT -->
+        <div class="kanban-col">
+          <div class="col-header">
+            <div class="col-title-group">
+              <span class="col-dot dot-erledigt"></span>
+              <span>Erledigt</span>
+              <span class="col-count" style="color:#10b981; font-weight:700;">15</span>
+            </div>
+            <button class="btn-col-add"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <!-- TASK CC-13 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-13</span>
+              <i class="fa-solid fa-check check-icon-done"></i>
+            </div>
+            <div class="task-title">Empathy Map erstellen</div>
+            <div class="task-tags">
+              <span class="tag tag-konzept">Konzept</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span style="color:#10b981;"><i class="fa-solid fa-check"></i> 12. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 4/4</span>
+              </div>
+              <div class="task-user">LH</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-14 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-14</span>
+              <i class="fa-solid fa-check check-icon-done"></i>
+            </div>
+            <div class="task-title">Datenmodell abstimmen</div>
+            <div class="task-tags">
+              <span class="tag tag-backend">Backend</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span style="color:#10b981;"><i class="fa-solid fa-check"></i> 12. Okt.</span>
+                <span><i class="fa-solid fa-list-check"></i> 3/3</span>
+              </div>
+              <div class="task-user" style="background:#fef3c7; color:#d97706;">AY</div>
+            </div>
+          </div>
+
+          <!-- TASK CC-15 -->
+          <div class="task-card">
+            <div class="task-top">
+              <span>CC-15</span>
+              <i class="fa-solid fa-check check-icon-done"></i>
+            </div>
+            <div class="task-title">Sprint-Planung durchführen</div>
+            <div class="task-tags">
+              <span class="tag tag-org">Organisation</span>
+            </div>
+            <div class="task-bottom">
+              <div class="task-meta">
+                <span style="color:#10b981;"><i class="fa-solid fa-check"></i> 13. Okt.</span>
+                <span><i class="fa-regular fa-comment"></i> 2</span>
+              </div>
+              <div class="task-user" style="background:#fce7f3; color:#db2777;">MS</div>
+            </div>
+          </div>
+
+          <div class="done-more-link">
+            12 weitere erledigte Aufgaben <i class="fa-solid fa-arrow-down" style="font-size:10px;"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="board-footer-text">
+        Aufgaben zwischen Spalten verschieben, um den Status zu aktualisieren. Jede Aufgabe hat eine klare Verantwortung.
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/account-menu.js"></script>
+</body>
+</html>

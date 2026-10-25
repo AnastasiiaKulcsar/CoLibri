@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Brainstorming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/brainstorming.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-team-role="creator">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Brainstorming</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="subtitle-tag">01 / IDEENFINDUNG</div>
+          <h1 class="page-title">Große Ideen fangen klein an.</h1>
+          <p class="page-description">Sammelt Perspektiven, verbindet Ideen und findet euren gemeinsamen Fokus.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- LEFT: FORM CARD -->
+        <div class="card">
+          <h2 class="card-title">Projektideen-Umfrage</h2>
+          <p class="card-sub">Deine Perspektive zählt.</p>
+
+          <div class="survey-progress">
+            <span>Team-Rückmeldungen</span>
+            <span data-survey-response-count>4 / 4</span>
+          </div>
+          <div class="progress-bar" style="background:#e2e8f0; margin-bottom:20px;">
+            <div data-survey-progress-fill style="width:100%; height:100%; background:var(--success);"></div>
+          </div>
+
+          <form id="idea-form">
+            <div class="form-group">
+              <label class="form-label" for="idea-proposal">Welche Idee schlägst du vor?</label>
+              <textarea id="idea-proposal" class="form-control" placeholder="Beschreibe deine Idee..." rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idea-problem">Welches Problem löst diese Idee?</label>
+              <textarea id="idea-problem" class="form-control" placeholder="Welches Problem soll gelöst werden?" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idea-beneficiaries">Wem hilft diese Idee?</label>
+              <textarea id="idea-beneficiaries" class="form-control" placeholder="Wer profitiert von der Idee?" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idea-duration-hours">Optionale Zeit für die Umsetzung</label>
+              <div class="duration-input">
+                <label class="duration-field">
+                  <input id="idea-duration-hours" class="form-control" type="number" min="0" step="1" placeholder="0" aria-label="Stunden">
+                  <span>Stunden</span>
+                </label>
+                <label class="duration-field">
+                  <input id="idea-duration-minutes" class="form-control" type="number" min="0" max="59" step="1" placeholder="0" aria-label="Minuten">
+                  <span>Minuten</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="btn-secondary" type="submit">Idee hinzufügen</button>
+          </form>
+
+          <div class="saved-status" id="idea-feedback" role="status" aria-live="polite">
+            Ideen werden nur in dieser Demo angezeigt.
+          </div>
+        </div>
+
+        <!-- RIGHT: MINDMAP -->
+        <div class="right-column">
+          <div class="card">
+            <div class="mindmap-header">
+              <div>
+                <h2 class="card-title">Eure Ideen, verbunden.</h2>
+                <p class="card-sub" id="mindmap-count" style="margin-bottom:0;">1 Hauptidee · 3 verbundene Ideen</p>
+              </div>
+              <button class="reset-ideas-button" id="reset-ideas" type="button">
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                Alles zurücksetzen
+              </button>
+            </div>
+
+            <div class="mindmap-wrapper" id="mindmap">
+              <div class="center-node" id="main-idea" aria-label="Hauptidee"></div>
+              <div class="connected-ideas" id="idea-nodes" aria-label="Mit der Hauptidee verbundene Ideen"></div>
+            </div>
+          </div>
+
+          <!-- BOTTOM CARDS -->
+          <section class="card admin-panel" data-admin-panel hidden aria-labelledby="admin-panel-title">
+            <div class="admin-panel-heading">
+              <div>
+                <p class="admin-panel-label">Nur für den Team-Creator sichtbar</p>
+                <h2 id="admin-panel-title" class="card-title">Admin Panel</h2>
+              </div>
+            </div>
+            <form id="main-idea-form" class="main-idea-form">
+              <h3>Hauptidee schreiben</h3>
+              <label>
+                Name der Hauptidee
+                <input id="main-idea-title-input" type="text" maxlength="100" required>
+              </label>
+              <label>
+                Beschreibung
+                <textarea id="main-idea-description-input" rows="2" maxlength="240" required></textarea>
+              </label>
+              <button class="btn-primary" type="submit">Hauptidee speichern</button>
+              <p id="main-idea-feedback" role="status" aria-live="polite"></p>
+            </form>
+            <section class="idea-library admin-idea-library" aria-labelledby="idea-library-title">
+              <h3 class="card-title" id="idea-library-title">Ideenpool</h3>
+              <p class="card-sub">Wähle eine Idee aus, verbinde sie mit der Hauptidee oder gib sie für die Abstimmung frei.</p>
+              <p class="idea-library-empty" id="idea-library-empty">Im Ideenpool gibt es noch keine weiteren Ideen.</p>
+              <div id="idea-library-list" class="idea-library-list" aria-live="polite"></div>
+            </section>
+            <div class="admin-favorites">
+              <ul id="favorites-list" aria-live="polite"></ul>
+            </div>
+
+            <div class="action-row">
+              <button class="btn-primary" id="open-voting">
+                Zur Ideenabstimmung <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <p id="voting-navigation-feedback" role="status" aria-live="polite"></p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const adminPanel = document.querySelector("[data-admin-panel]");
+    adminPanel.hidden = document.body.dataset.teamRole !== "creator";
+
+    const mindmap = document.getElementById("mindmap");
+    const mindmapCount = document.getElementById("mindmap-count");
+    const mainIdeaContainer = document.getElementById("main-idea");
+    const connectedIdeasContainer = document.getElementById("idea-nodes");
+    const ideaLibrary = document.getElementById("idea-library-list");
+    const ideaLibraryEmpty = document.getElementById("idea-library-empty");
+    const ideaForm = document.getElementById("idea-form");
+    const ideaFeedback = document.getElementById("idea-feedback");
+    const mainIdeaForm = document.getElementById("main-idea-form");
+    const mainIdeaTitleInput = document.getElementById("main-idea-title-input");
+    const mainIdeaDescriptionInput = document.getElementById("main-idea-description-input");
+    const mainIdeaFeedback = document.getElementById("main-idea-feedback");
+    const resetIdeasButton = document.getElementById("reset-ideas");
+    const surveyResponseCount = document.querySelector("[data-survey-response-count]");
+    const surveyProgressFill = document.querySelector("[data-survey-progress-fill]");
+    resetIdeasButton.hidden = document.body.dataset.teamRole !== "creator";
+    const favoritesList = document.getElementById("favorites-list");
+    const openVotingButton = document.getElementById("open-voting");
+    const votingNavigationFeedback = document.getElementById("voting-navigation-feedback");
+    const ideaFields = {
+      proposal: document.getElementById("idea-proposal"),
+      problem: document.getElementById("idea-problem"),
+      beneficiaries: document.getElementById("idea-beneficiaries"),
+      hours: document.getElementById("idea-duration-hours"),
+      minutes: document.getElementById("idea-duration-minutes"),
+    };
+    const ideas = [
+      {
+        id: "campuscycle",
+        title: "CampusCycle",
+        description: "Nachhaltige Mobilität auf dem Campus",
+        isMain: true,
+        isConnected: false,
+        isFavorite: false,
+        isSelectedForVoting: false,
+      },
+      {
+        id: "bike-sharing",
+        title: "Fahrräder teilen",
+        description: "Welche Idee schlägst du vor?",
+        problem: "Viele Fahrräder bleiben ungenutzt, während andere keines zur Verfügung haben.",
+        beneficiaries: "Studierende ohne eigenes Fahrrad.",
+        isMain: false,
+        isConnected: true,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: false,
+      },
+      {
+        id: "repair-help",
+        title: "Reparaturhilfe",
+        description: "Gemeinsame Hilfe und Werkzeug für kleine Fahrradreparaturen anbieten.",
+        problem: "Kleine Defekte und hohe Reparaturkosten machen Fahrräder oft unbrauchbar.",
+        beneficiaries: "Studierende mit einem defekten Fahrrad.",
+        isMain: false,
+        isConnected: true,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: false,
+      },
+      {
+        id: "campus-mobility",
+        title: "Günstige Campusmobilität",
+        description: "Eine bezahlbare und flexible Alternative für den Weg über den Campus schaffen.",
+        problem: "Wege über den Campus sind ohne Fahrrad oft zeitaufwendig oder teuer.",
+        beneficiaries: "Studierende, die eine günstige und flexible Fortbewegung brauchen.",
+        isMain: false,
+        isConnected: true,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: false,
+      },
+      {
+        id: "demo-foodshare",
+        title: "FoodShare",
+        description: "Übrig gebliebenes Essen auf dem Campus teilen.",
+        problem: "Gutes Essen wird weggeworfen, obwohl andere Studierende eine günstige Mahlzeit suchen.",
+        beneficiaries: "Studierende mit kleinem Budget und die Campusgemeinschaft.",
+        isMain: false,
+        isConnected: true,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: true,
+      },
+      {
+        id: "demo-foodshare-pool",
+        title: "FoodShare",
+        description: "Übrig gebliebenes Essen auf dem Campus teilen.",
+        problem: "Gutes Essen wird weggeworfen, obwohl andere Studierende eine günstige Mahlzeit suchen.",
+        beneficiaries: "Studierende mit kleinem Budget und die Campusgemeinschaft.",
+        isMain: false,
+        isConnected: false,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: false,
+      },
+    ];
+    let nextIdeaId = 1;
+
+    const createIdeaCard = (idea, isConnected) => {
+      const card = document.createElement("article");
+      card.className = `node-card ${isConnected ? "highlight connected-idea" : "idea-library-card"}${idea.isFavorite ? " is-favorite" : ""}`;
+      card.dataset.ideaId = idea.id;
+      card.dataset.ideaCard = "";
+
+      const details = [
+        ["Idee", idea.title],
+        ["Problem", idea.problem || idea.description],
+        ["Wem hilft diese Idee?", idea.beneficiaries || "Nicht angegeben"],
+        ["Optionale Zeit für die Umsetzung", idea.duration || "Nicht angegeben"],
+      ];
+      for (const [label, value] of details) {
+        const detail = document.createElement("p");
+        detail.className = "node-desc idea-detail";
+        const detailLabel = document.createElement("strong");
+        detailLabel.textContent = `${label}: `;
+        detail.append(detailLabel, document.createTextNode(value));
+        card.append(detail);
+      }
+      if (isConnected) {
+        const copyAction = document.createElement("button");
+        copyAction.type = "button";
+        copyAction.className = "idea-action";
+        copyAction.dataset.ideaAction = "copy-to-pool";
+        copyAction.disabled = idea.isCopiedToPool;
+        copyAction.textContent = idea.isCopiedToPool ? "Bereits im Ideenpool" : "In Ideenpool hinzufügen";
+        card.append(copyAction);
+      }
+
+      if (isConnected) {
+        const action = document.createElement("button");
+        action.type = "button";
+        action.className = "idea-action";
+        action.dataset.ideaAction = "delete";
+        action.textContent = "Idee löschen";
+        card.append(action);
+      }
+
+      if (!isConnected && document.body.dataset.teamRole === "creator") {
+        const votingAction = document.createElement("button");
+        votingAction.type = "button";
+        votingAction.className = "idea-action";
+        votingAction.dataset.ideaAction = "toggle-voting";
+        votingAction.setAttribute("aria-pressed", String(idea.isSelectedForVoting));
+        votingAction.textContent = idea.isSelectedForVoting
+          ? "In Umfrage · Entfernen"
+          : "Zur Umfrage hinzufügen";
+        card.append(votingAction);
+
+        const deleteAction = document.createElement("button");
+        deleteAction.type = "button";
+        deleteAction.className = "idea-action";
+        deleteAction.dataset.ideaAction = "delete";
+        deleteAction.textContent = "Aus Ideenpool löschen";
+        card.append(deleteAction);
+      }
+      return card;
+    };
+
+    const renderMainIdea = (idea) => {
+      mainIdeaContainer.replaceChildren();
+      mainIdeaContainer.classList.toggle("is-favorite", Boolean(idea?.isFavorite));
+
+      if (!idea) {
+        delete mainIdeaContainer.dataset.ideaId;
+        delete mainIdeaContainer.dataset.ideaCard;
+        const emptyMessage = document.createElement("p");
+        emptyMessage.className = "node-desc";
+        emptyMessage.textContent = "Noch keine Hauptidee. Fügt eure erste Idee über das Formular hinzu.";
+        mainIdeaContainer.append(emptyMessage);
+        return;
+      }
+
+      mainIdeaContainer.dataset.ideaId = idea.id;
+      mainIdeaContainer.dataset.ideaCard = "";
+      mainIdeaTitleInput.value = idea.title;
+      mainIdeaDescriptionInput.value = idea.description;
+
+      const label = document.createElement("span");
+      label.className = "main-idea-label";
+      label.textContent = "Hauptidee";
+      const title = document.createElement("h3");
+      title.textContent = idea.title;
+      const description = document.createElement("p");
+      description.textContent = idea.description;
+      mainIdeaContainer.append(label, title, description);
+    };
+
+    mainIdeaForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const mainIdea = ideas.find((idea) => idea.isMain);
+      const title = mainIdeaTitleInput.value.trim();
+      const description = mainIdeaDescriptionInput.value.trim();
+
+      if (!title || !description) return;
+
+      if (mainIdea) {
+        mainIdea.title = title;
+        mainIdea.description = description;
+        mainIdeaFeedback.textContent = "Die Hauptidee wurde in der Mindmap aktualisiert.";
+      } else {
+        ideas.push({
+          id: `idea-${nextIdeaId++}`,
+          title,
+          description,
+          isMain: true,
+          isConnected: false,
+          isFavorite: false,
+          isSelectedForVoting: false,
+        });
+        mainIdeaFeedback.textContent = "Die Hauptidee wurde zur Mindmap hinzugefügt.";
+      }
+      renderIdeaViews();
+    });
+
+    const renderFavorites = () => {
+      const favorites = ideas.filter((idea) => idea.isFavorite);
+      favoritesList.replaceChildren();
+
+      for (const favorite of favorites) {
+        const listItem = document.createElement("li");
+        const title = document.createElement("strong");
+        const description = document.createElement("span");
+        title.textContent = favorite.title;
+        description.textContent = favorite.description;
+        listItem.append(title, description);
+        favoritesList.append(listItem);
+      }
+    };
+
+    const renderIdeaViews = () => {
+      const mainIdea = ideas.find((idea) => idea.isMain);
+      renderMainIdea(mainIdea);
+      connectedIdeasContainer.replaceChildren();
+      ideaLibrary.replaceChildren();
+
+      for (const idea of ideas) {
+        if (idea.isMain) continue;
+        if (idea.isConnected) {
+          connectedIdeasContainer.append(createIdeaCard(idea, true));
+        }
+        if (!idea.isConnected) {
+          ideaLibrary.append(createIdeaCard(idea, false));
+        }
+      }
+
+      const connectedCount = ideas.filter((idea) => idea.isConnected).length;
+      const poolCount = ideas.filter((idea) => !idea.isMain && !idea.isConnected).length;
+      ideaLibraryEmpty.hidden = poolCount > 0;
+      mindmapCount.textContent = `${mainIdea ? "1 Hauptidee" : "0 Hauptideen"} · ${connectedCount} verbundene Ideen${poolCount ? ` · ${poolCount} im Ideenpool` : ""}`;
+      renderFavorites();
+    };
+
+    const getSelectedIdeas = () => ideas
+      .filter((idea) => idea.isSelectedForVoting)
+      .map((idea) => ({
+        title: idea.title,
+        description: [
+          idea.problem ? `Problem: ${idea.problem}` : "",
+          idea.beneficiaries ? `Hilft: ${idea.beneficiaries}` : "",
+          idea.duration ? `Umsetzungszeit: ${idea.duration}` : "",
+        ].filter(Boolean).join(" "),
+      }));
+
+    const saveSelectedIdeasForVoting = () => {
+      const selectedIdeas = getSelectedIdeas();
+      try {
+        localStorage.setItem("colibri-campus-lab-voting-shortlist", JSON.stringify(selectedIdeas));
+        if (selectedIdeas.length > 0) {
+          localStorage.removeItem("colibri-campus-lab-voting-reset");
+        } else {
+          localStorage.setItem("colibri-campus-lab-voting-reset", "true");
+        }
+      } catch (error) {
+        ideaFeedback.textContent = "Die Umfrage-Auswahl konnte nicht gespeichert werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        console.error("Umfrage-Auswahl konnte nicht gespeichert werden.", error);
+        return false;
+      }
+      return true;
+    };
+
+    resetIdeasButton.addEventListener("click", () => {
+      if (document.body.dataset.teamRole !== "creator") return;
+
+      const confirmed = window.confirm("Wirklich alle Ideen und Umfrageeingaben löschen? Dieser Schritt kann nicht rückgängig gemacht werden.");
+      if (!confirmed) return;
+
+      try {
+        localStorage.removeItem("colibri-campus-lab-voting-shortlist");
+        localStorage.setItem("colibri-campus-lab-voting-reset", "true");
+      } catch (error) {
+        ideaFeedback.textContent = "Die Abstimmung konnte nicht zurückgesetzt werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        console.error("Abstimmung konnte nicht für den Reset markiert werden.", error);
+        return;
+      }
+
+      ideas.splice(0, ideas.length);
+      ideaForm.reset();
+      mainIdeaForm.reset();
+      ideaFeedback.textContent = "Alle Ideen und Umfrageeingaben wurden gelöscht.";
+      mainIdeaFeedback.textContent = "";
+      votingNavigationFeedback.textContent = "";
+      surveyResponseCount.textContent = "0 / 4";
+      surveyProgressFill.style.width = "0%";
+      renderIdeaViews();
+    });
+
+    const handleIdeaAction = (event) => {
+      const button = event.target.closest("[data-idea-action]");
+      if (!button) return;
+
+      const ideaCard = button.closest("[data-idea-card]");
+      const idea = ideas.find((item) => item.id === ideaCard.dataset.ideaId);
+      if (!idea) return;
+
+      switch (button.dataset.ideaAction) {
+        case "favorite":
+          if (idea.isMain) return;
+          idea.isFavorite = !idea.isFavorite;
+          break;
+        case "connect":
+          idea.isConnected = true;
+          break;
+        case "disconnect":
+          idea.isConnected = false;
+          break;
+        case "delete":
+          if (idea.isMain) return;
+          ideas.splice(ideas.indexOf(idea), 1);
+          break;
+        case "toggle-voting":
+          if (document.body.dataset.teamRole !== "creator" || idea.isConnected) return;
+          idea.isSelectedForVoting = !idea.isSelectedForVoting;
+          if (!saveSelectedIdeasForVoting()) {
+            idea.isSelectedForVoting = !idea.isSelectedForVoting;
+            renderIdeaViews();
+            return;
+          }
+          votingNavigationFeedback.textContent = idea.isSelectedForVoting
+            ? `„${idea.title}“ wurde sofort zur Umfrage hinzugefügt.`
+            : `„${idea.title}“ wurde aus der Umfrage entfernt.`;
+          break;
+        case "copy-to-pool":
+          if (!idea.isConnected || idea.isCopiedToPool) return;
+          idea.isCopiedToPool = true;
+          ideas.push({
+            id: `idea-${nextIdeaId++}`,
+            title: idea.title,
+            description: idea.description,
+            problem: idea.problem,
+            beneficiaries: idea.beneficiaries,
+            duration: idea.duration,
+            isMain: false,
+            isConnected: false,
+            isFavorite: false,
+            isSelectedForVoting: false,
+            isCopiedToPool: false,
+          });
+          break;
+      }
+
+      renderIdeaViews();
+    };
+
+    mindmap.addEventListener("click", handleIdeaAction);
+    ideaLibrary.addEventListener("click", handleIdeaAction);
+
+    openVotingButton.addEventListener("click", () => {
+      const selectedIdeas = getSelectedIdeas();
+
+      if (selectedIdeas.length === 0) {
+        votingNavigationFeedback.textContent = "Wähle zuerst mindestens eine Idee aus dem Ideenpool für die Abstimmung aus.";
+        return;
+      }
+
+      try {
+        localStorage.setItem("colibri-campus-lab-voting-shortlist", JSON.stringify(selectedIdeas));
+        localStorage.removeItem("colibri-campus-lab-voting-reset");
+      } catch (error) {
+        votingNavigationFeedback.textContent = "Die Abstimmung konnte nicht gestartet werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        console.error("Der Abstimmungs-Reset konnte nicht aufgehoben werden.", error);
+        return;
+      }
+
+      const shortlist = encodeURIComponent(JSON.stringify(selectedIdeas));
+      window.location.href = `ideenabstimmung.html?shortlist=${shortlist}`;
+    });
+
+    ideaForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const idea = {
+        proposal: ideaFields.proposal.value.trim(),
+        problem: ideaFields.problem.value.trim(),
+        beneficiaries: ideaFields.beneficiaries.value.trim(),
+        hours: ideaFields.hours.value,
+        minutes: ideaFields.minutes.value,
+      };
+      const requiredFields = [ideaFields.proposal, ideaFields.problem, ideaFields.beneficiaries];
+      const emptyField = requiredFields.find((field) => !field.value.trim());
+
+      if (emptyField) {
+        emptyField.setCustomValidity("Bitte fülle dieses Feld aus.");
+        emptyField.reportValidity();
+        emptyField.addEventListener("input", () => emptyField.setCustomValidity(""), { once: true });
+        return;
+      }
+
+      if (idea.hours || idea.minutes) {
+        idea.duration = [
+          idea.hours ? `${idea.hours} Std.` : "",
+          idea.minutes ? `${idea.minutes} Min.` : "",
+        ].filter(Boolean).join(" ");
+      }
+
+      ideas.push({
+        id: `idea-${nextIdeaId++}`,
+        title: idea.proposal,
+        description: "",
+        problem: idea.problem,
+        beneficiaries: idea.beneficiaries,
+        duration: idea.duration,
+        isMain: false,
+        isConnected: false,
+        isFavorite: false,
+        isSelectedForVoting: false,
+        isCopiedToPool: false,
+      });
+      ideaForm.reset();
+      ideaFeedback.textContent = "Deine Idee ist jetzt im Ideenpool. Du kannst sie mit der Hauptidee verbinden.";
+      renderIdeaViews();
+    });
+
+    renderIdeaViews();
+  </script>
+  <script src="js/account-menu.js"></script>
+</body>
+</html>

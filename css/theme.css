@@ -1,0 +1,539 @@
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-app: #f3f7fa;
+  --bg-sidebar: #132b3f;
+  --bg-card: #ffffff;
+  --primary: #72c1f1;
+  --primary-hover: #5bb3e8;
+  --primary-light: #eaf4fb;
+  --primary-dark: #0369a1;
+  --text-main: #1f2937;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+body {
+  font-family: inherit;
+  font-size: 14px;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
+.page-title,
+.profile-page main h1 {
+  font-size: 28px;
+}
+
+.sidebar {
+  box-sizing: border-box;
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  height: 100vh;
+  flex: 0 0 250px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  overflow-y: auto;
+  color: #ffffff;
+  background-color: var(--bg-sidebar);
+  border-color: #203c52;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #94a3b8;
+}
+
+.sidebar .brand {
+  color: #ffffff;
+}
+
+.sidebar .project-selector {
+  background: transparent;
+}
+
+.sidebar .project-title,
+.sidebar .progress-title,
+.sidebar .user-info > div:nth-child(2) > div:first-child {
+  color: #ffffff;
+}
+
+.sidebar .project-subtitle,
+.sidebar .progress-date,
+.sidebar .progress-status,
+.sidebar .badge-count,
+.sidebar .nav-label {
+  color: #9db2c4;
+}
+
+.sidebar .nav-item a {
+  color: #d5e1ea;
+}
+
+.sidebar .nav-item a:hover {
+  color: #ffffff;
+  background: #203c52;
+}
+
+.sidebar .nav-item.active a {
+  color: #ffffff;
+  background: #24506e;
+}
+
+.sidebar .progress-box {
+  color: #e7eff5;
+  background: #1b374d;
+  border: 1px solid #29465d;
+}
+
+.progress-date-button {
+  display: block;
+  margin: 4px 0 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7dd3fc;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+}
+
+.team-deadline-form {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 11px;
+}
+
+.team-deadline-form[hidden] {
+  display: none;
+}
+
+.team-deadline-form input,
+.team-deadline-form button {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font: inherit;
+}
+
+.team-deadline-form button {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.team-deadline-form p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.sidebar .progress-bar {
+  background: #385267;
+}
+
+.main-wrapper {
+  background-color: var(--bg-app);
+}
+
+.top-header {
+  border-color: var(--border-color);
+}
+
+.card,
+.modal-content {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+.project-selector {
+  cursor: default;
+}
+
+.profile-page {
+  background-color: var(--bg-app);
+}
+
+.profile-page > aside {
+  box-sizing: border-box;
+  width: 250px;
+  min-width: 250px;
+  min-height: 100vh;
+  height: 100vh;
+  flex: 0 0 250px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  overflow-y: auto;
+  color: #ffffff;
+  background-color: var(--bg-sidebar);
+  border-color: #203c52;
+}
+
+.profile-page > aside .bg-slate-50 {
+  background-color: #1b374d;
+  border-color: #29465d;
+}
+
+.profile-page > aside .text-slate-800,
+.profile-page > aside .text-slate-600 {
+  color: #e7eff5;
+}
+
+.profile-page > aside .text-slate-500,
+.profile-page > aside .text-slate-400 {
+  color: #9db2c4;
+}
+
+.profile-page > aside nav a {
+  color: #d5e1ea;
+}
+
+.profile-page > aside nav a:hover {
+  color: #ffffff;
+  background-color: #203c52;
+}
+
+.profile-page > aside nav a.bg-sky-100\/70 {
+  color: #ffffff;
+  background-color: #24506e;
+}
+
+.profile-page > aside .border-slate-200 {
+  border-color: #29465d;
+}
+
+.user-profile {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid #29465d;
+}
+
+.user-profile > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+}
+
+.user-profile > summary::-webkit-details-marker {
+  display: none;
+}
+
+.user-profile .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.user-profile .avatar {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  background: #dff2fd;
+  color: #075985;
+  font-size: 11px;
+}
+
+.user-profile > .account-dropdown {
+  position: absolute;
+  z-index: 20;
+  bottom: calc(100% + 8px);
+  right: 0;
+  left: auto;
+  width: 208px;
+  box-sizing: border-box;
+  display: grid;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .12);
+}
+
+.account-menu-item {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--text-main);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.account-menu-item:hover,
+.account-menu-item:focus-visible {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.account-menu-feedback {
+  min-height: 14px;
+  margin: 4px 8px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.user-profile:not([open]) > .account-dropdown,
+.account-menu:not([open]) > .account-dropdown {
+  display: none;
+}
+
+.user-profile[open] > .account-dropdown,
+.account-menu[open] > .account-dropdown {
+  display: grid;
+}
+
+.user-profile > .account-dropdown {
+  background: #ffffff;
+  color: var(--text-main);
+}
+
+.user-profile > .account-dropdown a,
+.user-profile > .account-dropdown button {
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-page > main {
+  background-color: var(--bg-app);
+}
+
+.profile-page .card,
+.profile-page main .bg-white {
+  border-color: var(--border-color);
+}
+
+.btn-primary,
+.btn-primary-dark {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary-dark:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+@media (max-width: 800px) {
+  body:not(.login-page):not(.team-create-page) {
+    display: block;
+  }
+
+  .sidebar,
+  .profile-page > aside {
+    position: relative;
+    top: auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 484px;
+    height: auto;
+    max-height: none;
+    flex: 0 0 auto;
+    align-self: stretch;
+    overflow: visible;
+    padding: 14px 16px;
+    border-right: 0;
+    border-bottom: 1px solid #203c52;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    gap: 0;
+  }
+
+  .sidebar .brand {
+    margin-bottom: 12px;
+  }
+
+  .sidebar .project-selector {
+    margin-bottom: 14px;
+  }
+
+  .sidebar .nav-label {
+    margin-bottom: 8px;
+  }
+
+  .sidebar .nav-menu,
+  .profile-page > aside nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .profile-page > aside nav > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+  }
+
+  .sidebar .nav-item a,
+  .profile-page > aside nav a {
+    min-height: 38px;
+  }
+
+  .sidebar-footer,
+  .profile-page > aside > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .sidebar-footer .progress-box,
+  .profile-page > aside > div:last-child > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .profile-page > aside > div:last-child {
+    margin-top: 16px;
+  }
+
+  .profile-page > aside > div:last-child > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+  }
+
+  .profile-page {
+    display: block;
+  }
+
+  .main-wrapper,
+  .profile-page > main {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline-color: var(--primary);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-app: #111923;
+  --bg-sidebar: #132b3f;
+  --bg-card: #1c2835;
+  --primary: #58b7eb;
+  --primary-hover: #78c9f3;
+  --primary-light: #233d51;
+  --primary-dark: #7ccafa;
+  --text-main: #e6edf4;
+  --text-muted: #a9b6c5;
+  --border-color: #344454;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .main-wrapper,
+html[data-theme="dark"] .content,
+html[data-theme="dark"] .main-area,
+html[data-theme="dark"] .profile-page,
+html[data-theme="dark"] .profile-page > main,
+html[data-theme="dark"] .login-main,
+html[data-theme="dark"] .team-create-main,
+html[data-theme="dark"] .subscription-page,
+html[data-theme="dark"] .settings-page {
+  background-color: var(--bg-app) !important;
+  color: var(--text-main);
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] [class*="-card"],
+html[data-theme="dark"] .bg-white,
+html[data-theme="dark"] .bg-slate-50,
+html[data-theme="dark"] .bg-gray-50,
+html[data-theme="dark"] .subscription-contact-section,
+html[data-theme="dark"] .settings-card,
+html[data-theme="dark"] .settings-help {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main);
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] .page-title,
+html[data-theme="dark"] .text-slate-800,
+html[data-theme="dark"] .text-slate-900,
+html[data-theme="dark"] .text-gray-800,
+html[data-theme="dark"] .text-gray-900 {
+  color: var(--text-main) !important;
+}
+
+html[data-theme="dark"] .text-slate-400,
+html[data-theme="dark"] .text-slate-500,
+html[data-theme="dark"] .text-slate-600,
+html[data-theme="dark"] .text-gray-500,
+html[data-theme="dark"] .text-gray-600,
+html[data-theme="dark"] .muted,
+html[data-theme="dark"] .settings-intro,
+html[data-theme="dark"] .subscription-intro > p:last-child {
+  color: var(--text-muted) !important;
+}
+
+html[data-theme="dark"] .user-profile > .account-dropdown,
+html[data-theme="dark"] .account-dropdown {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+html[data-theme="dark"] .account-menu-item {
+  color: var(--text-main);
+}
+
+html[data-theme="dark"] .account-menu-item:hover,
+html[data-theme="dark"] .account-menu-item:focus-visible {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  background-color: #17212d;
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+html[data-theme="dark"] .theme-option:has(input:checked) {
+  background: var(--primary-light);
+}

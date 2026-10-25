@@ -1,0 +1,2 @@
+Platzhalter fuer das Teamfoto auf login.html.
+Ersetze diese Textdatei durch das echte Bild und benenne es teamfoto.jpg.

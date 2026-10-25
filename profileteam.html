@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/theme.js"></script>
+    <title>CoLibri - Team & Profil</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/profileteam.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="profile-page min-h-screen flex flex-col md:flex-row antialiased">
+
+    <!-- SIDEBAR -->
+    <aside class="w-full md:w-64 lg:w-72 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 p-5 min-h-screen">
+        <div>
+            <!-- Header / Logo -->
+            <div class="flex items-center gap-3 px-2 mb-6">
+                <!-- Origami Bird Logo Icon -->
+                <div class="w-8 h-8 rounded-lg bg-sky-50 flex items-center justify-center text-sky-500">
+                    <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-800">CoLibri</span>
+            </div>
+
+            <!-- Project Selector Dropdown Card -->
+            <div class="px-2 mb-6">
+                <div class="text-xs font-semibold text-slate-800">Team: Campus Lab</div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="space-y-1">
+                <div class="text-[10px] font-semibold tracking-wider uppercase text-slate-400 px-3 mb-2">Dein Projekt</div>
+                
+                <a href="profileteam.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-sky-100/70 text-sky-800 font-medium text-xs">
+                    <i data-lucide="users" class="w-4 h-4 text-sky-600"></i>
+                    <span>Team & Profil</span>
+                </a>
+
+                <a href="brainstorming.html" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 text-xs transition-colors">
+                    <div class="flex items-center gap-3">
+                        <i data-lucide="lightbulb" class="w-4 h-4 text-slate-400"></i>
+                        <span>Brainstorming</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-medium">6</span>
+                </a>
+
+                <a href="ideenabstimmung.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 text-xs transition-colors">
+                    <i data-lucide="vote" class="w-4 h-4 text-slate-400"></i>
+                    <span>Ideenabstimmung</span>
+                </a>
+
+                <a href="ideaausarbeiten.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 text-xs transition-colors">
+                    <i data-lucide="scissors" class="w-4 h-4 text-slate-400"></i>
+                    <span>Idee ausarbeiten</span>
+                </a>
+
+                <a href="report.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 text-xs transition-colors">
+                    <i data-lucide="pie-chart" class="w-4 h-4 text-slate-400"></i>
+                    <span>Projektbericht</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Sidebar Bottom Box & User Info -->
+        <div class="mt-8 space-y-4">
+            <!-- Progress Box Widget -->
+            <div class="relative bg-slate-50 border border-slate-200/80 rounded-2xl p-4">
+                <div class="text-xs font-semibold text-slate-800 mb-0.5">Gemeinsam zum Prototyp</div>
+                <div class="text-[11px] text-slate-500 mb-3" data-team-deadline>Abgabe am 30. Oktober</div>
+                <button type="button" data-toggle-team-deadline class="text-[11px] text-sky-600 hover:underline mb-2">Abgabedatum ändern</button>
+                <form data-team-deadline-form hidden class="team-deadline-form">
+                    <label for="team-deadline-input" class="block text-[11px] font-medium text-slate-600">Neues Team-Abgabedatum</label>
+                    <input id="team-deadline-input" type="date" required class="w-full rounded-lg border border-slate-200 px-2 py-1.5 text-xs">
+                    <button type="submit" class="w-full rounded-lg bg-sky-100 px-2 py-1.5 text-xs font-semibold text-sky-800 hover:bg-sky-200">Speichern</button>
+                    <p data-team-deadline-feedback role="status" aria-live="polite" class="text-[10px] text-slate-500"></p>
+                </form>
+                
+                <!-- Progress Bar -->
+                <div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden mb-2">
+                    <div class="h-full bg-sky-400 rounded-full" style="width: 62.5%;"></div>
+                </div>
+                <div class="text-[11px] text-slate-400">15 von 24 Aufgaben erledigt</div>
+            </div>
+
+            <!-- Help link -->
+            <a href="mailto:supportcolibri@team.net" class="flex items-center gap-3 px-3 py-2 text-xs text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="help-circle" class="w-4 h-4 text-slate-400"></i>
+                <span>Hilfe & Feedback</span>
+            </a>
+
+            <div>
+                <!-- User Profile Bottom -->
+                <details class="user-profile" data-account-menu style="position:relative;">
+                    <summary style="cursor:pointer; list-style:none;">
+                        <div class="user-info">
+                            <div class="avatar">LH</div>
+                            <div>
+                                <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+                                <div style="font-size:10px; color:var(--text-muted);">Dein Workspace</div>
+                            </div>
+                        </div>
+                        <span aria-hidden="true">⌄</span>
+                    </summary>
+                    <div class="account-dropdown">
+                        <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+                        <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+                        <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+                        <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 flex flex-col min-w-0 bg-[#f4f7f9] p-6 lg:p-10">
+        
+        <!-- TOP NAVIGATION / HEADER BAR -->
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <!-- Breadcrumbs -->
+            <div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                <span>CampusCycle</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-400"></i>
+                <span class="text-slate-800">Team & Profil</span>
+            </div>
+
+            <!-- Status Indicator, Avatar Stack & Notifications -->
+            <div class="flex items-center gap-6 self-end sm:self-auto">
+                <!-- Avatar Stack -->
+                <div class="flex items-center -space-x-1.5">
+                    <div class="w-7 h-7 rounded-full bg-sky-100 border-2 border-white text-sky-800 text-[10px] font-bold flex items-center justify-center">LH</div>
+                    <div class="w-7 h-7 rounded-full bg-indigo-100 border-2 border-white text-indigo-800 text-[10px] font-bold flex items-center justify-center">AY</div>
+                    <div class="w-7 h-7 rounded-full bg-rose-100 border-2 border-white text-rose-800 text-[10px] font-bold flex items-center justify-center">MS</div>
+                    <div class="w-7 h-7 rounded-full bg-emerald-100 border-2 border-white text-emerald-800 text-[10px] font-bold flex items-center justify-center">JW</div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- PAGE TITLE HEADER -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Ein starkes Team. Euer Projekt.</h1>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Verwalte dein Profil und bring die richtigen Menschen zusammen.</p>
+            </div>
+        </div>
+
+        <!-- MAIN CARDS GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- LEFT COLUMN: DEIN PROFIL (4 Cols) -->
+            <div class="lg:col-span-5 xl:col-span-4 flex flex-col">
+                
+                <div class="bg-white rounded-2xl card-border p-6 shadow-xs lg:flex lg:flex-1 lg:flex-col">
+                    <h2 class="text-base font-semibold text-slate-900 mb-6">Dein Profil</h2>
+
+                    <!-- Avatar Profile Section -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-sky-100 text-sky-800 font-bold text-base flex items-center justify-center shrink-0">
+                            LH
+                        </div>
+                        <div>
+                            <div class="font-semibold text-slate-900 text-sm">Lena Hoffmann</div>
+                            <button class="text-xs text-sky-600 hover:underline mt-0.5 font-medium">Profilbild ändern</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Form -->
+                    <form id="profile-form" class="space-y-4 lg:flex lg:flex-1 lg:flex-col lg:justify-between" onsubmit="event.preventDefault();">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1.5">Vollständiger Name</label>
+                            <input type="text" value="Lena Hoffmann" class="w-full px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1.5">E-Mail</label>
+                            <input type="email" value="lena.hoffmann@hs-berlin.de" class="w-full px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                        </div>
+
+                        <div>
+                            <label for="profile-phone" class="block text-xs font-medium text-slate-600 mb-1.5">Telefonnummer</label>
+                            <input id="profile-phone" name="phone" type="tel" autocomplete="tel" value="+49 30 12345678" placeholder="+49 ..." class="w-full px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                            <p class="mt-1.5 text-[10px] text-slate-400">Diese Nummer ist für alle Teammitglieder sichtbar.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1.5">Studiengang</label>
+                            <input type="text" value="Medieninformatik" placeholder="Studiengang eingeben" class="w-full px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-600 mb-1.5">Semester</label>
+                                <div class="relative">
+                                    <select class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 appearance-none focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 bg-white">
+                                        <option selected>5. Semester</option>
+                                        <option>1. Semester</option>
+                                        <option>3. Semester</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-600 mb-1.5">Hochschule</label>
+                                <input type="text" value="HS Berlin" class="w-full px-3 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-600 mb-1.5">Über mich</label>
+                            <textarea rows="4" class="w-full px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 resize-none">Ich mag gute UX und Ideen, die unseren Campus nachhaltiger machen.</textarea>
+                        </div>
+
+                        <div>
+                            <label for="profile-talent-input" class="block text-xs font-medium text-slate-600 mb-1.5">Meine Talente</label>
+                            <div class="flex gap-2">
+                                <input id="profile-talent-input" type="text" maxlength="60" placeholder="Talent eingeben" class="min-w-0 flex-1 px-3.5 py-3 rounded-xl border border-slate-200 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                <button id="add-profile-talent" type="button" aria-label="Talent hinzufügen" class="rounded-xl bg-sky-100 px-4 text-lg font-semibold text-sky-800 hover:bg-sky-200">+</button>
+                            </div>
+                            <ul id="profile-talent-list" class="mt-3 flex flex-wrap gap-2" aria-label="Hinzugefügte Talente"></ul>
+                            <p id="profile-talent-feedback" class="mt-2 text-[11px] text-slate-500" role="status" aria-live="polite"></p>
+                        </div>
+
+                        <button type="submit" class="btn-primary px-4 py-2.5 rounded-xl font-medium text-xs shadow-xs mt-2">
+                            Profil speichern
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: TEAM & FORMS (7-8 Cols) -->
+            <div class="lg:col-span-7 xl:col-span-8 space-y-6">
+                
+                <!-- TOP TEAM MEMBERS CARD -->
+                <div class="bg-white rounded-2xl card-border p-6 shadow-xs">
+                    
+                    <!-- Team Title & Edit Header -->
+                    <div class="flex items-start justify-between mb-6 pb-4 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center">
+                                <i data-lucide="bike" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-slate-900">Team Campus Lab</h3>
+                                <p class="text-xs text-slate-400 mt-0.5">CampusCycle · Medieninformatik · WiSe 2026</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Members Subheader -->
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-xs font-semibold text-slate-800">
+                            Teammitglieder · <span id="member-count" class="text-slate-500">4</span>
+                        </div>
+                    </div>
+
+                    <!-- Member List Table / Rows -->
+                    <div id="team-members" class="divide-y divide-slate-100 mb-6">
+                        
+                        <!-- Member 1 (LH) -->
+                        <div data-team-member data-member-id="lena" class="py-3.5 flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-sky-100 text-sky-800 font-bold text-xs flex items-center justify-center shrink-0">
+                                    LH
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-semibold text-slate-900">Lena Hoffmann</span>
+                                        <span class="px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 text-[10px] font-semibold">Du · Admin</span>
+                                    </div>
+                                    <span class="text-[11px] text-slate-400">lena.hoffmann@hs-berlin.de</span>
+                                    <span id="team-member-phone" class="block text-[11px] text-slate-400">+49 30 12345678</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap items-center gap-2 self-end sm:self-auto">
+                                <div class="relative">
+                                    <select class="px-3 py-1.5 pr-8 rounded-xl border border-slate-200 text-xs text-slate-700 bg-white appearance-none focus:outline-none focus:border-sky-500">
+                                        <option selected>Product Owner</option>
+                                        <option>Developer</option>
+                                        <option>Scrum Master</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                                <button type="button" data-save-member class="px-3 py-1.5 rounded-lg bg-sky-100 text-sky-800 text-xs font-medium hover:bg-sky-200 transition-colors">Speichern</button>
+                                <button type="button" data-delete-member class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 text-xs font-medium hover:bg-rose-50 transition-colors">Löschen</button>
+                            </div>
+                            <div class="w-full basis-full pl-11">
+                                <div class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">Profil-Talente</div>
+                                <ul data-member-talent-list aria-label="Talente von Lena Hoffmann" class="flex flex-wrap gap-2"></ul>
+                            </div>
+                        </div>
+
+                        <!-- Member 2 (AY) -->
+                        <div data-team-member data-member-id="amir" class="py-3.5 flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold text-xs flex items-center justify-center shrink-0">
+                                    AY
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-900">Amir Yilmaz</div>
+                                    <span class="text-[11px] text-slate-400">amir.yilmaz@hs-berlin.de</span>
+                                    <span class="block text-[11px] text-slate-400">+49 30 23456781</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap items-center gap-2 self-end sm:self-auto">
+                                <div class="relative">
+                                    <select class="px-3 py-1.5 pr-8 rounded-xl border border-slate-200 text-xs text-slate-700 bg-white appearance-none focus:outline-none focus:border-sky-500">
+                                        <option selected>Developer</option>
+                                        <option>Product Owner</option>
+                                        <option>Scrum Master</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                                <button type="button" data-save-member class="px-3 py-1.5 rounded-lg bg-sky-100 text-sky-800 text-xs font-medium hover:bg-sky-200 transition-colors">Speichern</button>
+                                <button type="button" data-delete-member class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 text-xs font-medium hover:bg-rose-50 transition-colors">Löschen</button>
+                            </div>
+                            <div class="w-full basis-full pl-11">
+                                <div class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">Profil-Talente</div>
+                                <ul data-member-talent-list aria-label="Talente von Amir Yilmaz" class="flex flex-wrap gap-2"></ul>
+                            </div>
+                        </div>
+
+                        <!-- Member 3 (MS) -->
+                        <div data-team-member data-member-id="mia" class="py-3.5 flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-800 font-bold text-xs flex items-center justify-center shrink-0">
+                                    MS
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-900">Mia Schneider</div>
+                                    <span class="text-[11px] text-slate-400">mia.schneider@hs-berlin.de</span>
+                                    <span class="block text-[11px] text-slate-400">+49 30 34567812</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap items-center gap-2 self-end sm:self-auto">
+                                <div class="relative">
+                                    <select class="px-3 py-1.5 pr-8 rounded-xl border border-slate-200 text-xs text-slate-700 bg-white appearance-none focus:outline-none focus:border-sky-500">
+                                        <option selected>Scrum Master</option>
+                                        <option>Developer</option>
+                                        <option>Product Owner</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                                <button type="button" data-save-member class="px-3 py-1.5 rounded-lg bg-sky-100 text-sky-800 text-xs font-medium hover:bg-sky-200 transition-colors">Speichern</button>
+                                <button type="button" data-delete-member class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 text-xs font-medium hover:bg-rose-50 transition-colors">Löschen</button>
+                            </div>
+                            <div class="w-full basis-full pl-11">
+                                <div class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">Profil-Talente</div>
+                                <ul data-member-talent-list aria-label="Talente von Mia Schneider" class="flex flex-wrap gap-2"></ul>
+                            </div>
+                        </div>
+
+                        <!-- Member 4 (JW) -->
+                        <div data-team-member data-member-id="jonas" class="py-3.5 flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center shrink-0">
+                                    JW
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-slate-900">Jonas Weber</div>
+                                    <span class="text-[11px] text-slate-400">jonas.weber@hs-berlin.de</span>
+                                    <span class="block text-[11px] text-slate-400">+49 30 45678123</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-wrap items-center gap-2 self-end sm:self-auto">
+                                <div class="relative">
+                                    <select class="px-3 py-1.5 pr-8 rounded-xl border border-slate-200 text-xs text-slate-700 bg-white appearance-none focus:outline-none focus:border-sky-500">
+                                        <option selected>Developer</option>
+                                        <option>Product Owner</option>
+                                        <option>Scrum Master</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                </div>
+                                <button type="button" data-save-member class="px-3 py-1.5 rounded-lg bg-sky-100 text-sky-800 text-xs font-medium hover:bg-sky-200 transition-colors">Speichern</button>
+                                <button type="button" data-delete-member class="px-3 py-1.5 rounded-lg border border-rose-200 text-rose-700 text-xs font-medium hover:bg-rose-50 transition-colors">Löschen</button>
+                            </div>
+                            <div class="w-full basis-full pl-11">
+                                <div class="mb-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">Profil-Talente</div>
+                                <ul data-member-talent-list aria-label="Talente von Jonas Weber" class="flex flex-wrap gap-2"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p id="team-member-feedback" class="text-xs text-emerald-700" role="status" aria-live="polite"></p>
+
+                </div>
+
+                <!-- INVITATION CARD -->
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- CARD: EINLADUNG SENDEN -->
+                    <div class="bg-white rounded-2xl card-border p-6 shadow-xs flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base font-semibold text-slate-900 mb-0.5">Einladung senden</h3>
+                            <p class="text-xs text-slate-400 mb-6">Neue Mitglieder erhalten einen Zugangslink.</p>
+
+                            <form class="space-y-4" onsubmit="event.preventDefault();">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-600 mb-1.5">Hochschul-E-Mail</label>
+                                    <div class="relative">
+                                        <input type="email" placeholder="E-Mail-Adresse eingeben" class="w-full px-3.5 py-2 pr-10 rounded-xl border border-slate-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500">
+                                        <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2"></i>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-600 mb-1.5">Berechtigung</label>
+                                    <div class="relative">
+                                        <select class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-800 bg-white appearance-none focus:outline-none focus:border-sky-500">
+                                            <option selected>Mitglied</option>
+                                            <option>Admin</option>
+                                            <option>Betrachter</option>
+                                        </select>
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn-primary px-4 py-2.5 rounded-xl font-medium text-xs flex items-center gap-2 shadow-xs mt-2">
+                                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                                    <span>Einladung senden</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Lucide Icons Initialization & Interactivity -->
+    <script>
+        lucide.createIcons();
+
+        const profileForm = document.getElementById("profile-form");
+        const profilePhone = document.getElementById("profile-phone");
+        const teamMemberPhone = document.getElementById("team-member-phone");
+        const teamMembers = document.getElementById("team-members");
+        const memberCount = document.getElementById("member-count");
+        const memberFeedback = document.getElementById("team-member-feedback");
+        const talentStorageKey = "colibri-campus-lab-member-talents";
+        const talentInput = document.getElementById("profile-talent-input");
+        const addTalentButton = document.getElementById("add-profile-talent");
+        const talentList = document.getElementById("profile-talent-list");
+        const talentFeedback = document.getElementById("profile-talent-feedback");
+        const talentMembers = Array.from(teamMembers.querySelectorAll("[data-team-member]"));
+        const demoTalents = {
+            lena: ["UX-Design", "Prototyping", "Teamkommunikation"],
+            amir: ["Frontend-Entwicklung", "JavaScript", "Problemlösung"],
+            mia: ["Organisation", "Moderation", "Agile Methoden"],
+            jonas: ["Recherche", "Datenanalyse", "Präsentation"]
+        };
+        const memberTalents = Object.fromEntries(talentMembers.map((member) => [
+            member.dataset.memberId,
+            [...(demoTalents[member.dataset.memberId] || [])]
+        ]));
+
+        const persistMemberTalents = () => {
+            try {
+                localStorage.setItem(talentStorageKey, JSON.stringify(memberTalents));
+                return true;
+            } catch (error) {
+                console.error("Team-Talente konnten nicht im Browserspeicher gespeichert werden.", error);
+                return false;
+            }
+        };
+
+        const renderTalentList = (list, memberId, allowRemove) => {
+            list.replaceChildren();
+            memberTalents[memberId].forEach((talent, index) => {
+                const item = document.createElement("li");
+                item.className = "inline-flex items-center gap-2 rounded-full bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-800";
+                const text = document.createElement("span");
+                text.textContent = talent;
+                item.append(text);
+                if (allowRemove) {
+                    const removeButton = document.createElement("button");
+                    removeButton.type = "button";
+                    removeButton.className = "font-bold text-sky-700 hover:text-rose-600";
+                    removeButton.setAttribute("aria-label", `${talent} entfernen`);
+                    removeButton.textContent = "×";
+                    removeButton.addEventListener("click", () => {
+                        memberTalents[memberId].splice(index, 1);
+                        renderAllTalentLists();
+                        const persisted = persistMemberTalents();
+                        talentFeedback.textContent = persisted ? "Talent entfernt und gespeichert." : "Talent entfernt, aber nicht gespeichert.";
+                    });
+                    item.append(removeButton);
+                }
+                list.append(item);
+            });
+        };
+
+        const renderAllTalentLists = () => {
+            talentMembers.forEach((member) => {
+                renderTalentList(member.querySelector("[data-member-talent-list]"), member.dataset.memberId, false);
+            });
+            renderTalentList(talentList, "lena", true);
+        };
+
+        try {
+            const savedTalents = localStorage.getItem(talentStorageKey);
+            if (savedTalents) {
+                const parsedTalents = JSON.parse(savedTalents);
+                if (parsedTalents && typeof parsedTalents === "object" && !Array.isArray(parsedTalents)) {
+                    talentMembers.forEach((member) => {
+                        const memberId = member.dataset.memberId;
+                        const memberList = parsedTalents[memberId];
+                        if (Array.isArray(memberList) && memberList.every((talent) => typeof talent === "string") &&
+                            (memberId === "lena" || memberList.length > 0)) {
+                            memberTalents[memberId] = memberList.slice(0, 5);
+                        }
+                    });
+                } else {
+                    talentFeedback.textContent = "Gespeicherte Team-Talente konnten nicht geladen werden, da das Datenformat ungültig ist.";
+                }
+            } else {
+                const legacyTalents = localStorage.getItem("colibri-profile-lena-talents");
+                if (legacyTalents) {
+                    const parsedLegacyTalents = JSON.parse(legacyTalents);
+                    if (Array.isArray(parsedLegacyTalents) && parsedLegacyTalents.every((talent) => typeof talent === "string")) {
+                        memberTalents.lena = parsedLegacyTalents.slice(0, 5);
+                    }
+                }
+            }
+        } catch (error) {
+            talentFeedback.textContent = "Gespeicherte Team-Talente konnten nicht geladen werden.";
+            console.error("Team-Talente konnten nicht aus dem Browserspeicher geladen werden.", error);
+        }
+        renderAllTalentLists();
+
+        const addTalent = (memberId, input, feedback) => {
+            const talent = input.value.trim();
+            if (!talent) {
+                feedback.textContent = "Bitte gib zuerst ein Talent ein.";
+                input.focus();
+                return;
+            }
+            if (memberTalents[memberId].length >= 5) {
+                feedback.textContent = "Pro Person sind höchstens fünf Talente möglich.";
+                input.focus();
+                return;
+            }
+            if (memberTalents[memberId].some((item) => item.toLocaleLowerCase() === talent.toLocaleLowerCase())) {
+                feedback.textContent = "Dieses Talent ist bereits hinzugefügt.";
+                input.focus();
+                return;
+            }
+            memberTalents[memberId].push(talent);
+            input.value = "";
+            renderAllTalentLists();
+            feedback.textContent = persistMemberTalents()
+                ? "Talent hinzugefügt und gespeichert."
+                : "Talent hinzugefügt, aber nicht dauerhaft gespeichert.";
+            input.focus();
+        };
+
+        addTalentButton.addEventListener("click", () => addTalent("lena", talentInput, talentFeedback));
+        talentInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                addTalent("lena", talentInput, talentFeedback);
+            }
+        });
+
+        profileForm.addEventListener("submit", () => {
+            teamMemberPhone.textContent = profilePhone.value.trim();
+            teamMemberPhone.classList.toggle("hidden", !profilePhone.value.trim());
+            talentFeedback.textContent = persistMemberTalents()
+                ? "Profil und Team-Talente gespeichert. Sie sind in diesem Browser verfügbar."
+                : "Talente konnten nicht gespeichert werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        });
+
+        teamMembers.addEventListener("click", (event) => {
+            const button = event.target.closest("button");
+            if (!button) return;
+
+            const memberRow = button.closest("[data-team-member]");
+            const memberName = memberRow.querySelector(".text-xs.font-semibold.text-slate-900").textContent.trim();
+
+            if (button.hasAttribute("data-delete-member")) {
+                if (!window.confirm(`Möchtest du ${memberName} wirklich aus dem Team löschen?`)) return;
+                memberRow.remove();
+                memberCount.textContent = teamMembers.querySelectorAll("[data-team-member]").length;
+                memberFeedback.textContent = `${memberName} wurde aus dem Team entfernt (Demo).`;
+                return;
+            }
+
+            if (button.hasAttribute("data-save-member")) {
+                const role = memberRow.querySelector("select").value;
+                memberFeedback.textContent = `Änderungen für ${memberName} (${role}) gespeichert (Demo).`;
+            }
+        });
+
+    </script>
+    <script src="js/account-menu.js"></script>
+</body>
+</html>

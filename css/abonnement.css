@@ -1,0 +1,252 @@
+.subscription-page {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0, #e1f3fc 0, transparent 48%),
+    var(--bg-app);
+  color: var(--text-main);
+}
+
+.subscription-header,
+.subscription-page main,
+.subscription-footer {
+  width: min(100% - 40px, 1040px);
+  margin-inline: auto;
+}
+
+.subscription-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.subscription-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.subscription-brand img {
+  display: block;
+}
+
+.subscription-back {
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.subscription-back:hover,
+.subscription-contact-section > a:hover {
+  text-decoration: underline;
+}
+
+.subscription-intro {
+  max-width: 720px;
+  margin: 72px auto 40px;
+  text-align: center;
+}
+
+.subscription-eyebrow {
+  margin: 0 0 12px;
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.subscription-intro h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 44px);
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.subscription-intro > p:last-child {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.subscription-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.subscription-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  box-shadow: 0 12px 32px rgba(15, 42, 62, 0.06);
+}
+
+.subscription-card-campus {
+  border-top: 4px solid var(--primary);
+}
+
+.subscription-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 24px;
+  place-items: center;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 22px;
+}
+
+.subscription-card h2 {
+  margin: 0;
+  font-size: 23px;
+  letter-spacing: -0.02em;
+}
+
+.subscription-price {
+  margin: 18px 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.subscription-price span {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.subscription-summary {
+  min-height: 48px;
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.subscription-card ul {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subscription-card li {
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+
+.subscription-card li::before {
+  position: absolute;
+  left: 0;
+  color: var(--primary-dark);
+  content: "✓";
+  font-weight: 700;
+}
+
+.subscription-note {
+  margin: auto 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.subscription-contact {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 13px 16px;
+  background: var(--primary-dark);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.subscription-contact:hover {
+  background: #075985;
+}
+
+.subscription-contact-section {
+  margin: 48px 0 64px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.65);
+  text-align: center;
+}
+
+.subscription-contact-section h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subscription-contact-section p {
+  margin: 10px 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.subscription-contact-section > a {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.subscription-footer {
+  padding: 20px 0 28px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .subscription-header,
+  .subscription-page main,
+  .subscription-footer {
+    width: min(100% - 28px, 1040px);
+  }
+
+  .subscription-header {
+    min-height: 68px;
+  }
+
+  .subscription-back {
+    font-size: 12px;
+  }
+
+  .subscription-intro {
+    margin: 48px auto 30px;
+  }
+
+  .subscription-intro > p:last-child {
+    font-size: 14px;
+  }
+
+  .subscription-options {
+    grid-template-columns: 1fr;
+  }
+
+  .subscription-card {
+    padding: 24px;
+  }
+
+  .subscription-contact-section {
+    margin: 32px 0 44px;
+    padding: 24px 18px;
+  }
+}

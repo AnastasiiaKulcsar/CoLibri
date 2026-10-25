@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Ideenabstimmung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/ideenabstimmung.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Ideenabstimmung</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="subtitle-tag">02 / IDEENABSTIMMUNG</div>
+          <h1 class="page-title">Eine Idee. Ein gemeinsamer Start.</h1>
+          <p class="page-description">Eure Shortlist steht. Jetzt entscheidet ihr, welches Problem ihr lösen möchtet.</p>
+        </div>
+      </div>
+
+      <section class="winner-card" id="voting-winner" aria-live="polite" hidden>
+        <div class="winner-header">
+          <i class="fa-solid fa-trophy trophy-icon" aria-hidden="true"></i>
+          <h2 class="winner-title" id="voting-winner-title"></h2>
+        </div>
+        <p class="winner-desc" id="voting-winner-description"></p>
+        <span class="majority-badge" id="voting-winner-share"></span>
+      </section>
+
+      <!-- STATUS BANNER -->
+      <div class="status-banner">
+        <div class="status-banner-left">
+          <div class="status-icon-circle"><i class="fa-solid fa-check"></i></div>
+          <div>
+            <div class="status-title" id="voting-status-title">Alle Stimmen sind da!</div>
+            <div class="status-sub" id="voting-status-sub">4 von 4 Teammitgliedern haben abgestimmt · Eine Stimme pro Person</div>
+          </div>
+        </div>
+        <div class="status-badge-closed">
+          <span>Abgeschlossen</span>
+          <span id="voting-closed-date" style="font-weight:400; opacity:0.8;">13. Oktober 2026</span>
+          <button type="button" class="voting-date-edit" id="edit-voting-date">Datum ändern</button>
+          <form class="voting-date-form" id="voting-date-form" hidden>
+            <label class="visually-hidden" for="voting-date-input">Abschlussdatum</label>
+            <input id="voting-date-input" type="date" value="2026-10-13" required>
+            <button type="submit">Speichern</button>
+          </form>
+          <span id="voting-date-feedback" class="voting-date-feedback" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <!-- VOTING CARDS GRID -->
+      <div class="voting-grid" id="voting-grid">
+        
+        <!-- CARD 1 (SELECTED / WINNER) -->
+        <div class="vote-card selected">
+          <div class="card-header-tag">
+            <span class="tag-pill tag-blue">Nachhaltige Mobilität</span>
+            <div class="check-circle"><i class="fa-solid fa-check"></i></div>
+          </div>
+          <div class="illustration-box bg-light-blue">
+            <i class="fa-solid fa-bicycle"></i>
+          </div>
+          <h2 class="card-idea-title">CampusCycle</h2>
+          <p class="card-idea-desc">Eine Plattform, auf der Studierende Fahrräder teilen und Reparaturhilfe auf dem Campus finden.</p>
+          <div class="author-info">
+            <div class="author-avatar" style="background:#dbeafe; color:#1d4ed8;">LH</div>
+            <span>Eingereicht von Lena</span>
+          </div>
+          <div class="vote-stat-row">
+            <span>3 Stimmen</span>
+            <span style="color:#0284c7;">75 %</span>
+          </div>
+          <div class="vote-bar">
+            <div class="vote-fill" style="width:75%; background:#38bdf8;"></div>
+          </div>
+          <button class="btn-vote-status btn-vote-active">
+            <i class="fa-solid fa-check"></i> Deine Stimme · CampusCycle
+          </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="vote-card">
+          <div class="card-header-tag">
+            <span class="tag-pill tag-green">Food & Community</span>
+            <div class="check-circle"></div>
+          </div>
+          <div class="illustration-box bg-light-green">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+          <h2 class="card-idea-title">FoodShare</h2>
+          <p class="card-idea-desc">Übrig gebliebenes Essen teilen, Lebensmittel retten und neue Menschen am Campus kennenlernen.</p>
+          <div class="author-info">
+            <div class="author-avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+            <span>Eingereicht von Amir</span>
+          </div>
+          <div class="vote-stat-row">
+            <span>1 Stimme</span>
+            <span style="color:var(--text-muted);">25 %</span>
+          </div>
+          <div class="vote-bar">
+            <div class="vote-fill" style="width:25%; background:#94a3b8;"></div>
+          </div>
+          <button class="btn-vote-status btn-vote-disabled">Nicht ausgewählt</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="vote-card">
+          <div class="card-header-tag">
+            <span class="tag-pill tag-purple">Lernen & Austausch</span>
+            <div class="check-circle"></div>
+          </div>
+          <div class="illustration-box bg-light-purple">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h2 class="card-idea-title">LernBuddy</h2>
+          <p class="card-idea-desc">Passende Lernpartner finden und gemeinsam auf Prüfungen vorbereiten – fachübergreifend und unkompliziert.</p>
+          <div class="author-info">
+            <div class="author-avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+            <span>Eingereicht von Mia</span>
+          </div>
+          <div class="vote-stat-row">
+            <span>0 Stimmen</span>
+            <span style="color:var(--text-muted);">0 %</span>
+          </div>
+          <div class="vote-bar">
+            <div class="vote-fill" style="width:0%; background:#94a3b8;"></div>
+          </div>
+          <button class="btn-vote-status btn-vote-disabled">Nicht ausgewählt</button>
+        </div>
+
+      </div>
+
+      <p id="vote-feedback" role="status" aria-live="polite"></p>
+
+    </main>
+  </div>
+
+  <script>
+    const votingGrid = document.getElementById("voting-grid");
+    const voteFeedback = document.getElementById("vote-feedback");
+    const statusTitle = document.getElementById("voting-status-title");
+    const statusSub = document.getElementById("voting-status-sub");
+    const winnerCard = document.getElementById("voting-winner");
+    const winnerTitle = document.getElementById("voting-winner-title");
+    const winnerDescription = document.getElementById("voting-winner-description");
+    const winnerShare = document.getElementById("voting-winner-share");
+    const shortlistParameter = new URLSearchParams(window.location.search).get("shortlist");
+    const shortlistStorageKey = "colibri-campus-lab-voting-shortlist";
+    const resetStorageKey = "colibri-campus-lab-voting-reset";
+    let shortlist = [];
+    let selectedVote = null;
+    let votingWasReset = false;
+
+    const parseShortlist = (value) => {
+      try {
+        const parsedShortlist = JSON.parse(value);
+        if (Array.isArray(parsedShortlist)) {
+          return parsedShortlist.filter(
+            (idea) =>
+              idea &&
+              typeof idea.title === "string" &&
+              idea.title.trim() &&
+              typeof idea.description === "string",
+          );
+        }
+      } catch (error) {
+        console.error("Die gespeicherte Umfrage-Auswahl ist ungültig.", error);
+      }
+      return [];
+    };
+
+    try {
+      if (shortlistParameter) {
+        shortlist = parseShortlist(shortlistParameter);
+      } else {
+        const savedShortlist = localStorage.getItem(shortlistStorageKey);
+        if (savedShortlist) shortlist = parseShortlist(savedShortlist);
+        votingWasReset = localStorage.getItem(resetStorageKey) === "true";
+      }
+    } catch (error) {
+      voteFeedback.textContent = "Die Umfrage-Auswahl konnte nicht geladen werden.";
+      console.error("Umfrage-Auswahl konnte nicht aus dem Browserspeicher geladen werden.", error);
+    }
+
+    const renderShortlist = () => {
+      votingGrid.replaceChildren();
+      winnerCard.hidden = true;
+      for (const idea of shortlist) {
+        const card = document.createElement("article");
+        card.className = `vote-card${selectedVote === idea.title ? " selected" : ""}`;
+
+        const tag = document.createElement("div");
+        tag.className = "card-header-tag";
+        const tagText = document.createElement("span");
+        tagText.className = "tag-pill tag-blue";
+        tagText.textContent = "Für Abstimmung ausgewählt";
+        const check = document.createElement("div");
+        check.className = "check-circle";
+        if (selectedVote === idea.title) {
+          const icon = document.createElement("i");
+          icon.className = "fa-solid fa-check";
+          check.append(icon);
+        }
+        tag.append(tagText, check);
+
+        const illustration = document.createElement("div");
+        illustration.className = "illustration-box bg-light-blue";
+        const icon = document.createElement("i");
+        icon.className = "fa-regular fa-lightbulb";
+        illustration.append(icon);
+
+        const title = document.createElement("h2");
+        title.className = "card-idea-title";
+        title.textContent = idea.title.trim();
+        const description = document.createElement("p");
+        description.className = "card-idea-desc";
+        description.textContent = idea.description;
+        const author = document.createElement("div");
+        author.className = "author-info";
+        author.textContent = "Vom Admin für die Abstimmung ausgewählt";
+
+        const voteButton = document.createElement("button");
+        voteButton.type = "button";
+        voteButton.className = `btn-vote-status ${selectedVote === idea.title ? "btn-vote-active" : "btn-vote-disabled"}`;
+        voteButton.dataset.voteFor = idea.title;
+        voteButton.textContent = selectedVote === idea.title ? "Deine Stimme" : "Für diese Idee stimmen";
+
+        card.append(tag, illustration, title, description, author, voteButton);
+        votingGrid.append(card);
+      }
+    };
+
+    const renderDemoWinner = () => {
+      const candidates = Array.from(votingGrid.querySelectorAll(".vote-card")).map((card) => {
+        const title = card.querySelector(".card-idea-title")?.textContent.trim();
+        const voteText = card.querySelector(".vote-stat-row span")?.textContent.trim() || "";
+        const votes = Number.parseInt(voteText, 10);
+        return { title, votes };
+      }).filter((candidate) => candidate.title && Number.isInteger(candidate.votes) && candidate.votes >= 0);
+      const totalVotes = candidates.reduce((sum, candidate) => sum + candidate.votes, 0);
+      const maxVotes = Math.max(0, ...candidates.map((candidate) => candidate.votes));
+      const winners = candidates.filter((candidate) => candidate.votes === maxVotes);
+
+      if (totalVotes === 0 || winners.length !== 1) {
+        winnerCard.hidden = true;
+        return;
+      }
+
+      const winner = winners[0];
+      const percentage = Math.round((winner.votes / totalVotes) * 100);
+      winnerTitle.textContent = `Eure Gewinneridee: ${winner.title}`;
+      winnerDescription.textContent = `${winner.votes} von ${totalVotes} Stimmen entfallen auf diese Idee.`;
+      winnerShare.textContent = `${percentage} % der Stimmen`;
+      winnerCard.hidden = false;
+    };
+
+    const renderVotingState = () => {
+      if (shortlist.length > 0) {
+        statusTitle.textContent = "Die Abstimmung ist offen.";
+        statusSub.textContent = `${shortlist.length} ${shortlist.length === 1 ? "Idee steht" : "Ideen stehen"} zur Abstimmung bereit.`;
+        document.querySelector(".status-badge-closed").hidden = true;
+        voteFeedback.textContent = "";
+        renderShortlist();
+      } else if (votingWasReset) {
+        votingGrid.replaceChildren();
+        winnerCard.hidden = true;
+        statusTitle.textContent = "Die Abstimmung wurde zurückgesetzt.";
+        statusSub.textContent = "Fügt im Brainstorming neue Ideen zur Umfrage hinzu.";
+        document.querySelector(".status-badge-closed").hidden = true;
+        voteFeedback.textContent = "Es gibt keine Ideen oder Stimmen in der Abstimmung.";
+      } else {
+        renderDemoWinner();
+      }
+    };
+
+    votingGrid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-vote-for]");
+      if (!button) return;
+      selectedVote = button.dataset.voteFor;
+      voteFeedback.textContent = `Deine Demo-Stimme wurde für „${selectedVote}“ abgegeben.`;
+      renderShortlist();
+    });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key === shortlistStorageKey) {
+        shortlist = event.newValue ? parseShortlist(event.newValue) : [];
+        if (shortlist.length > 0) selectedVote = null;
+      }
+      if (event.key === resetStorageKey || event.key === shortlistStorageKey) {
+        try {
+          votingWasReset = localStorage.getItem(resetStorageKey) === "true";
+        } catch (error) {
+          voteFeedback.textContent = "Der Status der Abstimmung konnte nicht aktualisiert werden.";
+          console.error("Abstimmungsstatus konnte nicht aktualisiert werden.", error);
+          return;
+        }
+        renderVotingState();
+      }
+    });
+
+    renderVotingState();
+  </script>
+  <script src="js/account-menu.js"></script>
+  <script>
+    (() => {
+      const storageKey = "colibri-campus-lab-voting-closed-date";
+      const dateText = document.getElementById("voting-closed-date");
+      const editButton = document.getElementById("edit-voting-date");
+      const dateForm = document.getElementById("voting-date-form");
+      const dateInput = document.getElementById("voting-date-input");
+      const feedback = document.getElementById("voting-date-feedback");
+
+      function isValidDate(value) {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+        const [year, month, day] = value.split("-").map(Number);
+        const date = new Date(year, month - 1, day);
+        return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day;
+      }
+
+      function formatDate(value) {
+        const [year, month, day] = value.split("-").map(Number);
+        return new Date(year, month - 1, day).toLocaleDateString("de-DE", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+      }
+
+      try {
+        const savedDate = localStorage.getItem(storageKey);
+        if (savedDate && isValidDate(savedDate)) {
+          dateInput.value = savedDate;
+          dateText.textContent = formatDate(savedDate);
+        } else if (savedDate) {
+          feedback.textContent = "Das gespeicherte Abschlussdatum ist ungültig.";
+        }
+      } catch (error) {
+        feedback.textContent = "Das gespeicherte Abschlussdatum konnte nicht geladen werden.";
+        console.error("Abschlussdatum konnte nicht aus dem Browserspeicher geladen werden.", error);
+      }
+
+      editButton.addEventListener("click", () => {
+        dateForm.hidden = !dateForm.hidden;
+        feedback.textContent = "";
+      });
+
+      dateForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!isValidDate(dateInput.value)) {
+          feedback.textContent = "Bitte gib ein gültiges Abschlussdatum ein.";
+          return;
+        }
+
+        try {
+          localStorage.setItem(storageKey, dateInput.value);
+          dateText.textContent = formatDate(dateInput.value);
+          dateForm.hidden = true;
+          feedback.textContent = "Abschlussdatum gespeichert. Es ist in diesem Browser verfügbar.";
+        } catch (error) {
+          feedback.textContent = "Das Abschlussdatum konnte nicht gespeichert werden.";
+          console.error("Abschlussdatum konnte nicht im Browserspeicher gespeichert werden.", error);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

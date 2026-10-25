@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/theme.js"></script>
+    <title>CoLibri - Team erstellen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="team-create-page bg-main text-slate-800 antialiased min-h-screen">
+    <main class="team-create-main min-h-screen flex items-center justify-center p-6">
+        <section class="team-create-card w-full max-w-xl bg-card p-6 sm:p-10 rounded-2xl border border-custom shadow-xs">
+            <img src="resources/team-photo.jpg" alt="Ein Team arbeitet gemeinsam an einem Projekt" class="w-full h-56 sm:h-64 object-cover object-center rounded-xl mb-8">
+
+            <div class="inline-flex items-center gap-2 text-sm font-bold text-slate-800 mb-10">
+                <span class="w-9 h-9 rounded-xl bg-white border border-slate-100 flex items-center justify-center overflow-hidden">
+                    <img src="resources/logo.svg" alt="" width="36" height="36" class="object-contain">
+                </span>
+                CoLibri
+            </div>
+
+            <div class="mb-8">
+                <p class="text-[11px] font-semibold tracking-widest uppercase text-sky-700 mb-2">DEIN PROJEKT STARTET HIER</p>
+                <h1 class="text-3xl font-semibold text-slate-900 mb-2">Erstellt euer Team.</h1>
+                <p class="text-sm text-slate-500">Gib deinem Team einen Namen und füge Mitglieder mit ihrer E-Mail-Adresse und Rolle hinzu.</p>
+            </div>
+
+            <form id="create-team-form" class="space-y-6">
+                <div>
+                    <label for="team-name" class="block text-xs font-semibold text-slate-700 mb-1.5">Teamname</label>
+                    <input id="team-name" name="teamName" type="text" value="Campus Lab" required maxlength="60" class="w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                </div>
+
+                <fieldset class="space-y-3">
+                    <legend class="block text-xs font-semibold text-slate-700 mb-1.5">Mitglieder hinzufügen</legend>
+                    <div id="member-rows" class="space-y-3">
+                        <div class="member-row grid grid-cols-1 sm:grid-cols-[1fr_180px_auto] gap-3">
+                            <div>
+                                <label for="member-email-1" class="sr-only">E-Mail-Adresse des Mitglieds</label>
+                                <input id="member-email-1" name="memberEmail" type="email" autocomplete="email" value="amir.yilmaz@hs-berlin.de" class="w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                            </div>
+                            <div>
+                                <label for="member-role-1" class="sr-only">Rolle</label>
+                                <select id="member-role-1" name="memberRole" class="w-full px-3.5 py-3 rounded-lg border border-custom bg-white text-sm text-slate-700 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                    <option value="Mitglied">Mitglied</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Betrachter">Betrachter</option>
+                                </select>
+                            </div>
+                            <button type="button" data-remove-member aria-label="Mitglied entfernen" class="px-3 py-2 rounded-lg border border-slate-200 text-slate-500 hover:text-rose-700 hover:border-rose-200 hover:bg-rose-50 text-sm">Entfernen</button>
+                        </div>
+                    </div>
+                    <button id="add-member" type="button" class="inline-flex items-center gap-2 text-sm font-medium text-sky-700 hover:text-sky-900">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                        Weitere Person hinzufügen
+                    </button>
+                </fieldset>
+
+                <p id="team-error" class="text-sm text-emerald-700" role="status" aria-live="polite"></p>
+                <button type="submit" class="w-full py-3 px-4 btn-primary font-medium text-sm rounded-lg flex items-center justify-center gap-2">
+                    <span>Team erstellen</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        const form = document.getElementById("create-team-form");
+        const memberRows = document.getElementById("member-rows");
+        const errorMessage = document.getElementById("team-error");
+
+        memberRows.addEventListener("click", (event) => {
+            const removeButton = event.target.closest("[data-remove-member]");
+            if (removeButton) {
+                removeButton.closest(".member-row").remove();
+            }
+        });
+
+        document.getElementById("add-member").addEventListener("click", () => {
+            const rowNumber = memberRows.children.length + 1;
+            const row = document.createElement("div");
+            row.className = "member-row grid grid-cols-1 sm:grid-cols-[1fr_180px_auto] gap-3";
+
+            const emailField = document.createElement("div");
+            const emailLabel = document.createElement("label");
+            emailLabel.className = "sr-only";
+            emailLabel.htmlFor = `member-email-${rowNumber}`;
+            emailLabel.textContent = "E-Mail-Adresse des Mitglieds";
+            const emailInput = document.createElement("input");
+            emailInput.id = `member-email-${rowNumber}`;
+            emailInput.name = "memberEmail";
+            emailInput.type = "email";
+            emailInput.autocomplete = "email";
+            emailInput.placeholder = "E-Mail-Adresse";
+            emailInput.className = "w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+            emailField.append(emailLabel, emailInput);
+
+            const roleField = document.createElement("div");
+            const roleLabel = document.createElement("label");
+            roleLabel.className = "sr-only";
+            roleLabel.htmlFor = `member-role-${rowNumber}`;
+            roleLabel.textContent = "Rolle";
+            const roleSelect = document.createElement("select");
+            roleSelect.id = `member-role-${rowNumber}`;
+            roleSelect.name = "memberRole";
+            roleSelect.className = "w-full px-3.5 py-3 rounded-lg border border-custom bg-white text-sm text-slate-700 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+            for (const role of ["Mitglied", "Admin", "Betrachter"]) {
+                const option = document.createElement("option");
+                option.value = role;
+                option.textContent = role;
+                roleSelect.append(option);
+            }
+            roleField.append(roleLabel, roleSelect);
+
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.dataset.removeMember = "";
+            removeButton.setAttribute("aria-label", "Mitglied entfernen");
+            removeButton.className = "px-3 py-2 rounded-lg border border-slate-200 text-slate-500 hover:text-rose-700 hover:border-rose-200 hover:bg-rose-50 text-sm";
+            removeButton.textContent = "Entfernen";
+
+            row.append(emailField, roleField, removeButton);
+            memberRows.append(row);
+            emailInput.focus();
+        });
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            errorMessage.textContent = "";
+
+            const submittedEmails = Array.from(form.querySelectorAll('input[name="memberEmail"]'))
+                .map((input) => input.value.trim().toLowerCase())
+                .filter(Boolean);
+            const uniqueEmails = new Set(submittedEmails);
+
+            if (uniqueEmails.size !== submittedEmails.length) {
+                errorMessage.textContent = "Jede E-Mail-Adresse darf nur einmal eingetragen werden.";
+                errorMessage.classList.remove("text-emerald-700");
+                errorMessage.classList.add("text-rose-700");
+                return;
+            }
+
+            window.location.href = "profileteam.html";
+        });
+    </script>
+</body>
+</html>

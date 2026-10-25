@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/theme.js"></script>
+    <title>CoLibri - Willkommen im Team</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body class="login-page bg-main text-slate-800 antialiased min-h-screen">
+
+    <div class="login-shell flex flex-col lg:flex-row min-h-screen">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside class="login-sidebar w-full lg:w-[420px] xl:w-[480px] bg-sidebar text-white p-8 lg:p-12 flex flex-col justify-between shrink-0">
+            <div>
+                <!-- Logo -->
+                <div class="flex items-center gap-3 mb-12">
+                    <div class="p-1 bg-white rounded-xl">
+                        <img src="resources/logo.svg" alt="" width="36" height="36" class="rounded-lg object-contain">
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-white">CoLibri</span>
+                </div>
+
+                <!-- Subtitle Tag -->
+                <p class="text-[11px] font-semibold tracking-widest uppercase text-sidebar-muted mb-4">
+                    GUTE IDEEN ENTSTEHEN ZUSAMMEN.
+                </p>
+
+                <!-- Headline -->
+                <h1 class="text-3xl lg:text-4xl font-normal text-white mb-4 leading-tight">
+                    Aus einer Idee wird <br class="hidden sm:inline"/>euer Projekt.
+                </h1>
+
+                <!-- Description -->
+                <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                    Findet eure Stärken, plant als Team und macht aus dem nächsten Uni-Projekt etwas Großes.
+                </p>
+
+                <!-- Highlight text -->
+                <p class="text-sky-300 text-sm font-medium mb-8">
+                    Kleine Teams, grosse Ideen.
+                </p>
+
+                <img src="resources/team-photo.jpg" alt="Ein Team arbeitet gemeinsam an einem Projekt" class="w-full h-64 sm:h-72 object-cover object-center rounded-2xl mb-8 shadow-lg">
+
+                <!-- Feature List -->
+                <ul class="space-y-4 text-sm text-slate-200">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="lightbulb" class="w-5 h-5 text-slate-300 shrink-0"></i>
+                        <span>Gemeinsam die richtige Idee finden</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-slate-300 shrink-0"></i>
+                        <span>Stärken in klare Rollen übersetzen</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 text-slate-300 shrink-0"></i>
+                        <span>Fortschritt für alle sichtbar machen</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Left Footer Note -->
+            <div class="mt-12 pt-6 border-t border-slate-700/50 text-xs text-sidebar-muted">
+                Für Studierende. Für Teams. Für eure nächste Idee.
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT -->
+        <main class="login-main flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+            
+            <div>
+                <!-- Top Header Bar -->
+                <div class="flex items-center justify-between mb-8">
+                    <span class="inline-block px-3 py-1 bg-sky-100/80 text-sky-700 text-[11px] font-semibold rounded-md tracking-wider">
+                        DEIN PROJEKT STARTET HIER
+                    </span>
+                    
+                    <!-- Language selector -->
+                    <div class="relative inline-block text-left">
+                        <button type="button" class="inline-flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-slate-900">
+                            Deutsch
+                            <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Page Header -->
+                <div id="welcome-header" class="mb-10">
+                    <h2 class="text-3xl font-semibold text-slate-900 mb-2">Willkommen im Team.</h2>
+                    <p class="text-sm text-slate-500">Erstelle dein Konto oder melde dich in deinem Workspace an.</p>
+                </div>
+
+                <!-- Forms Grid Layout -->
+                <div id="registration-step" class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- REGISTER CARD (CARD 1) -->
+                    <div class="xl:col-span-7 bg-card p-6 sm:p-8 rounded-2xl border border-custom shadow-xs">
+                        <h3 class="text-xl font-semibold text-slate-900 mb-1">Konto erstellen</h3>
+                        <p class="text-xs text-slate-500 mb-6">Kostenlos starten. Gemeinsam weiterkommen.</p>
+
+                        <form id="registration-form" class="space-y-4">
+                            <!-- Name -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Vor- und Nachname</label>
+                                <input name="name" type="text" value="Lena Hoffmann" required class="w-full px-3.5 py-2.5 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Hochschul-E-Mail</label>
+                                <div class="relative">
+                                    <input id="registration-email" name="email" type="email" value="lena.hoffmann@hs-berlin.de" required class="w-full px-3.5 py-2.5 pr-10 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                    <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2"></i>
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Passwort</label>
+                                <div class="relative">
+                                    <input name="password" type="password" value="secretpassword123" required minlength="8" class="w-full px-3.5 py-2.5 pr-10 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                    <i data-lucide="eye-off" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                                </div>
+                                <p class="text-[11px] text-slate-400 mt-1.5">Mindestens 8 Zeichen, eine Zahl und ein Sonderzeichen.</p>
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Passwort bestätigen</label>
+                                <div class="relative">
+                                    <input name="password-confirmation" type="password" value="secretpassword123" required minlength="8" class="w-full px-3.5 py-2.5 pr-10 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                    <i data-lucide="eye-off" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                                </div>
+                            </div>
+
+                            <!-- Password Strength Bar -->
+                            <div class="flex items-center gap-3 pt-1">
+                                <div class="flex items-center gap-1.5 flex-1">
+                                    <div class="h-1.5 flex-1 bg-emerald-500 rounded-full"></div>
+                                    <div class="h-1.5 flex-1 bg-emerald-500 rounded-full"></div>
+                                    <div class="h-1.5 flex-1 bg-emerald-500 rounded-full"></div>
+                                </div>
+                                <span class="text-[11px] font-medium text-emerald-600 shrink-0">Sicheres Passwort</span>
+                            </div>
+
+                            <!-- Checkboxes -->
+                            <div class="space-y-2.5 pt-2">
+                                <label class="flex items-start gap-2.5 cursor-pointer">
+                                    <input type="checkbox" checked class="mt-0.5 rounded text-sky-500 focus:ring-sky-400 h-4 w-4 border-slate-300">
+                                    <span class="text-xs text-slate-600">Ich akzeptiere die <a href="#" class="underline">Nutzungsbedingungen</a> und die <a href="#" class="underline">Datenschutzerklärung</a>.</span>
+                                </label>
+
+                                <label class="flex items-center gap-2.5 cursor-pointer">
+                                    <input id="team-leader" name="team-leader" type="checkbox" checked class="rounded text-sky-500 focus:ring-sky-400 h-4 w-4 border-slate-300">
+                                    <span class="text-xs text-slate-600">Ich möchte ein Team gründen (ein Team pro Konto)</span>
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full py-3 px-4 btn-primary font-medium text-sm rounded-lg flex items-center justify-center gap-2 mt-4 shadow-sm">
+                                <span>Konto erstellen</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+
+                            <p class="text-[11px] text-center text-slate-400 pt-1">
+                                Wir senden dir einen Link zur Bestätigung deiner E-Mail.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- LOGIN & INVITATION RIGHT SIDE (CARD 2 & 3) -->
+                    <div class="xl:col-span-5 space-y-6">
+                        
+                        <!-- LOGIN CARD -->
+                        <div class="bg-card p-6 sm:p-8 rounded-2xl border border-custom shadow-xs">
+                            <h3 class="text-xl font-semibold text-slate-900 mb-1">Schon dabei?</h3>
+                            <p class="text-xs text-slate-500 mb-6">Melde dich an und mach weiter.</p>
+
+                            <form id="login-form" class="space-y-4" onsubmit="event.preventDefault();">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Hochschul-E-Mail</label>
+                                    <input type="email" value="lena.hoffmann@hs-berlin.de" class="w-full px-3.5 py-2.5 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1.5">Passwort</label>
+                                    <div class="relative">
+                                        <input type="password" value="secretpassword" class="w-full px-3.5 py-2.5 pr-10 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                        <i data-lucide="eye-off" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-xs pt-1">
+                                    <a href="#" class="text-sky-600 hover:underline">Passwort vergessen?</a>
+                                </div>
+
+                                <label class="flex items-center gap-2.5 cursor-pointer">
+                                    <input type="checkbox" class="rounded text-sky-500 focus:ring-sky-400 h-4 w-4 border-slate-300">
+                                    <span class="text-xs text-slate-600">Angemeldet bleiben</span>
+                                </label>
+
+                                <button type="submit" class="w-full sm:w-auto px-6 py-2.5 border border-slate-300 hover:bg-slate-50 text-slate-700 font-medium text-sm rounded-lg flex items-center justify-center gap-2 transition-colors">
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    <span>Anmelden</span>
+                                </button>
+                                <p id="login-feedback" class="text-xs text-emerald-700" role="status" aria-live="polite"></p>
+                            </form>
+                        </div>
+
+                        <!-- INVITATION CARD -->
+                        <div class="bg-invite p-6 rounded-2xl border border-sky-100">
+                            <div class="w-8 h-8 rounded-lg bg-sky-200/60 text-sky-700 flex items-center justify-center mb-3">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                            </div>
+
+                            <h4 class="text-sm font-semibold text-slate-900 mb-1">Du wurdest eingeladen?</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Registriere dich mit der eingeladenen E-Mail und tritt direkt Team Campus Lab bei.
+                            </p>
+                            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                                Verwende dieselbe E-Mail-Adresse wie in der Einladung. Als eingeladenes Mitglied kannst du kein Team gründen oder Admin auswählen.
+                            </p>
+
+                            <button id="accept-invitation" type="button" class="px-4 py-2 bg-white hover:bg-sky-50 border border-sky-200 text-sky-800 font-medium text-xs rounded-lg transition-colors mb-4">
+                                Mit Einladung registrieren
+                            </button>
+                            <p id="invitation-mode-feedback" class="hidden text-xs text-sky-800 mb-4" role="status" aria-live="polite"></p>
+
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white rounded-full border border-sky-100 shadow-2xs">
+                                <span class="w-5 h-5 rounded-full bg-rose-100 text-rose-600 text-[10px] font-semibold flex items-center justify-center">
+                                    MS
+                                </span>
+                                <span class="text-xs text-slate-600 font-medium">Mia freut sich auf dich.</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <section id="team-step" class="hidden max-w-2xl bg-card p-6 sm:p-8 rounded-2xl border border-custom shadow-xs" aria-labelledby="team-step-title">
+                    <button id="back-to-registration" type="button" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-800 mb-8">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        Zurück zur Registrierung
+                    </button>
+                    <div class="mb-8">
+                        <p class="text-[11px] font-semibold tracking-widest uppercase text-sky-700 mb-2">NÄCHSTER SCHRITT</p>
+                        <h2 id="team-step-title" class="text-3xl font-semibold text-slate-900 mb-2">Team erstellen</h2>
+                        <p class="text-sm text-slate-500">Gib deinem Team einen Namen und füge Mitglieder mit ihrer E-Mail-Adresse und Rolle hinzu.</p>
+                    </div>
+
+                    <form id="demo-team-form" class="space-y-6">
+                        <div>
+                            <label for="demo-team-name" class="block text-xs font-semibold text-slate-700 mb-1.5">Teamname</label>
+                            <input id="demo-team-name" name="teamName" type="text" value="Campus Lab" required maxlength="60" class="w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                        </div>
+
+                        <fieldset class="space-y-3">
+                            <legend class="block text-xs font-semibold text-slate-700 mb-1.5">Mitglieder hinzufügen</legend>
+                            <div id="demo-member-rows" class="space-y-3">
+                                <div class="demo-member-row grid grid-cols-1 sm:grid-cols-[1fr_180px_auto] gap-3">
+                                    <div>
+                                        <label for="demo-member-email-1" class="sr-only">E-Mail-Adresse des Mitglieds</label>
+                                        <input id="demo-member-email-1" name="memberEmail" type="email" value="amir.yilmaz@hs-berlin.de" class="w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                    </div>
+                                    <div>
+                                        <label for="demo-member-role-1" class="sr-only">Rolle</label>
+                                        <select id="demo-member-role-1" name="memberRole" class="w-full px-3.5 py-3 rounded-lg border border-custom bg-white text-sm text-slate-700 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
+                                            <option value="Mitglied" selected>Mitglied</option>
+                                            <option value="Admin">Admin</option>
+                                            <option value="Betrachter">Betrachter</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" data-remove-demo-member aria-label="Mitglied entfernen" class="px-3 py-2 rounded-lg border border-slate-200 text-slate-500 hover:text-rose-700 hover:border-rose-200 hover:bg-rose-50 text-sm">Entfernen</button>
+                                </div>
+                            </div>
+                            <button id="demo-add-member" type="button" class="inline-flex items-center gap-2 text-sm font-medium text-sky-700 hover:text-sky-900">
+                                <i data-lucide="plus" class="w-4 h-4"></i>
+                                Weitere Person hinzufügen
+                            </button>
+                        </fieldset>
+
+                        <p id="demo-team-feedback" class="text-sm text-emerald-700" role="status" aria-live="polite"></p>
+                        <button type="submit" class="w-full py-3 px-4 btn-primary font-medium text-sm rounded-lg flex items-center justify-center gap-2">
+                            <span>Team erstellen</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </section>
+
+                <section id="invitation-complete" class="hidden max-w-2xl bg-card p-6 sm:p-8 rounded-2xl border border-custom shadow-xs" aria-labelledby="invitation-complete-title">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5">
+                        <i data-lucide="check" class="w-6 h-6"></i>
+                    </div>
+                    <h2 id="invitation-complete-title" class="text-2xl font-semibold text-slate-900 mb-2">Willkommen bei Team Campus Lab!</h2>
+                    <p id="invitation-complete-message" class="text-sm text-slate-500"></p>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                <div>© 2026 CoLibri</div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="hover:text-slate-600">Datenschutz</a>
+                    <a href="#" class="hover:text-slate-600">Impressum</a>
+                    <a href="#" class="hover:text-slate-600">Hilfe</a>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+
+        const registrationForm = document.getElementById("registration-form");
+        const registrationStep = document.getElementById("registration-step");
+        const teamStep = document.getElementById("team-step");
+        const invitationComplete = document.getElementById("invitation-complete");
+        const welcomeHeader = document.getElementById("welcome-header");
+        const demoTeamForm = document.getElementById("demo-team-form");
+        const demoMemberRows = document.getElementById("demo-member-rows");
+        const demoTeamFeedback = document.getElementById("demo-team-feedback");
+        const teamLeaderCheckbox = document.getElementById("team-leader");
+        const registrationEmail = document.getElementById("registration-email");
+        let invitedMemberMode = false;
+
+        demoMemberRows.addEventListener("click", (event) => {
+            const removeButton = event.target.closest("[data-remove-demo-member]");
+            if (removeButton) {
+                removeButton.closest(".demo-member-row").remove();
+            }
+        });
+
+        registrationForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const formData = new FormData(registrationForm);
+            const password = formData.get("password");
+            const passwordConfirmation = formData.get("password-confirmation");
+
+            if (password !== passwordConfirmation) {
+                registrationForm.elements["password-confirmation"].setCustomValidity("Die Passwörter stimmen nicht überein.");
+                registrationForm.elements["password-confirmation"].reportValidity();
+                return;
+            }
+
+            registrationForm.elements["password-confirmation"].setCustomValidity("");
+            registrationStep.classList.add("hidden");
+            welcomeHeader.classList.add("hidden");
+            if (invitedMemberMode) {
+                invitationComplete.classList.remove("hidden");
+                document.getElementById("invitation-complete-message").textContent =
+                    `Demo-Registrierung für ${registrationEmail.value.trim()} abgeschlossen. Du trittst Team Campus Lab als Mitglied bei. Es wurden keine Daten gespeichert.`;
+                document.getElementById("invitation-complete-title").focus();
+                return;
+            }
+
+            teamStep.classList.remove("hidden");
+            document.getElementById("team-step-title").focus();
+        });
+
+        registrationForm.elements["password-confirmation"].addEventListener("input", (event) => {
+            event.currentTarget.setCustomValidity("");
+        });
+
+        document.getElementById("login-form").addEventListener("submit", () => {
+            document.getElementById("login-feedback").textContent = "Anmeldung in dieser Demo ausgewählt. Es wurden keine Daten gesendet.";
+        });
+
+        document.getElementById("accept-invitation").addEventListener("click", () => {
+            invitedMemberMode = true;
+            teamLeaderCheckbox.checked = false;
+            teamLeaderCheckbox.disabled = true;
+            document.getElementById("invitation-mode-feedback").textContent =
+                "Einladungsmodus aktiv: Teamgründung und Admin-Auswahl sind deaktiviert. Bitte nutze die eingeladene E-Mail-Adresse.";
+            document.getElementById("invitation-mode-feedback").classList.remove("hidden");
+            registrationEmail.focus();
+        });
+
+        document.getElementById("back-to-registration").addEventListener("click", () => {
+            teamStep.classList.add("hidden");
+            registrationStep.classList.remove("hidden");
+            welcomeHeader.classList.remove("hidden");
+        });
+
+        document.getElementById("demo-add-member").addEventListener("click", () => {
+            const number = demoMemberRows.children.length + 1;
+            const row = document.createElement("div");
+            row.className = "demo-member-row grid grid-cols-1 sm:grid-cols-[1fr_180px_auto] gap-3";
+
+            const emailField = document.createElement("div");
+            const emailLabel = document.createElement("label");
+            emailLabel.className = "sr-only";
+            emailLabel.htmlFor = `demo-member-email-${number}`;
+            emailLabel.textContent = "E-Mail-Adresse des Mitglieds";
+            const emailInput = document.createElement("input");
+            emailInput.id = `demo-member-email-${number}`;
+            emailInput.name = "memberEmail";
+            emailInput.type = "email";
+            emailInput.placeholder = "E-Mail-Adresse";
+            emailInput.className = "w-full px-3.5 py-3 rounded-lg border border-custom text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+            emailField.append(emailLabel, emailInput);
+
+            const roleField = document.createElement("div");
+            const roleLabel = document.createElement("label");
+            roleLabel.className = "sr-only";
+            roleLabel.htmlFor = `demo-member-role-${number}`;
+            roleLabel.textContent = "Rolle";
+            const roleSelect = document.createElement("select");
+            roleSelect.id = `demo-member-role-${number}`;
+            roleSelect.name = "memberRole";
+            roleSelect.className = "w-full px-3.5 py-3 rounded-lg border border-custom bg-white text-sm text-slate-700 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+            for (const role of ["Mitglied", "Admin", "Betrachter"]) {
+                const option = document.createElement("option");
+                option.value = role;
+                option.textContent = role;
+                roleSelect.append(option);
+            }
+            roleField.append(roleLabel, roleSelect);
+            const removeButton = document.createElement("button");
+            removeButton.type = "button";
+            removeButton.dataset.removeDemoMember = "";
+            removeButton.setAttribute("aria-label", "Mitglied entfernen");
+            removeButton.className = "px-3 py-2 rounded-lg border border-slate-200 text-slate-500 hover:text-rose-700 hover:border-rose-200 hover:bg-rose-50 text-sm";
+            removeButton.textContent = "Entfernen";
+
+            row.append(emailField, roleField, removeButton);
+            demoMemberRows.append(row);
+            emailInput.focus();
+        });
+
+        demoTeamForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            window.location.href = "profileteam.html";
+        });
+    </script>
+</body>
+</html>

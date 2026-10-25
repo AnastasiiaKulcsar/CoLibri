@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Projektbericht</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Projektbericht</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Euer Fortschritt auf einen Blick.</h1>
+          <p class="page-description">CampusCycle - Team Campus Lab · Stand: 13. Oktober 2026, 14:30 Uhr</p>
+        </div>
+        <button class="btn-primary">
+          <i class="fa-solid fa-download"></i> Bericht exportieren
+        </button>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-row">
+        <div class="filter-group">
+          <button class="filter-btn">
+            <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i> Gesamtes Projekt
+          </button>
+          <button class="filter-btn">
+            <i class="fa-regular fa-calendar"></i> 28. Sept. – 13. Okt. 2026
+          </button>
+        </div>
+      </div>
+
+      <!-- METRICS GRID -->
+      <div class="metrics-grid">
+        
+        <!-- CARD 1 -->
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Projektfortschritt</span>
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div>
+            <div class="metric-value">63 %</div>
+            <div class="metric-sub">+21 Prozentpunkte seit letzter Woche</div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Erledigte Aufgaben</span>
+            <i class="fa-regular fa-circle-check" style="color:#94a3b8;"></i>
+          </div>
+          <div>
+            <div class="metric-value">15</div>
+            <div class="metric-sub">von insgesamt 24 Aufgaben</div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Offene Aufgaben</span>
+            <i class="fa-solid fa-list-check" style="color:#94a3b8;"></i>
+          </div>
+          <div>
+            <div class="metric-value">9</div>
+            <div class="metric-sub">4 offen · 3 in Arbeit · 2 in Review</div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="metric-card">
+          <div class="metric-header">
+            <span>Bis zur Abgabe</span>
+            <i class="fa-regular fa-flag" style="color:#94a3b8;"></i>
+          </div>
+          <div>
+            <div class="metric-value">17 Tage</div>
+            <div class="metric-sub" data-team-deadline-metric>30. Oktober 2026 · Prototyp & Bericht</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CHARTS GRID -->
+      <div class="charts-grid">
+        
+        <!-- LINE CHART CARD -->
+        <div class="card">
+          <div class="chart-header">
+            <div>
+              <h2 class="card-title">Schritt für Schritt voran</h2>
+              <p class="card-sub">Kumulierte erledigte Aufgaben</p>
+            </div>
+            <div style="font-size:11px; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
+              <span style="width:8px; height:8px; background:#38bdf8; border-radius:50%;"></span> Erledigt
+            </div>
+          </div>
+
+          <div class="line-chart-container">
+            <div class="chart-badge">15 erledigt</div>
+            <svg class="line-chart-svg" viewBox="0 0 500 180" preserveAspectRatio="none">
+              <!-- Grid lines -->
+              <line x1="0" y1="30" x2="500" y2="30" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="0" y1="70" x2="500" y2="70" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="0" y1="110" x2="500" y2="110" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="0" y1="150" x2="500" y2="150" stroke="#f1f5f9" stroke-width="1"/>
+
+              <!-- Fill Area -->
+              <polygon points="0,170 120,150 240,120 360,80 480,50 480,170" fill="#e0f2fe" opacity="0.6" />
+
+              <!-- Line -->
+              <polyline points="0,170 120,150 240,120 360,80 480,50" fill="none" stroke="#38bdf8" stroke-width="3" />
+
+              <!-- Point -->
+              <circle cx="480" cy="50" r="4" fill="#38bdf8" stroke="#ffffff" stroke-width="2"/>
+            </svg>
+          </div>
+
+          <div class="chart-xaxis">
+            <span>28. Sept.</span>
+            <span>2. Okt.</span>
+            <span>6. Okt.</span>
+            <span>9. Okt.</span>
+            <span>13. Okt.</span>
+          </div>
+        </div>
+
+        <!-- DONUT CHART CARD -->
+        <div class="card">
+          <div>
+            <h2 class="card-title">Aufgaben nach Status</h2>
+            <p class="card-sub">24 Aufgaben im gesamten Projekt</p>
+          </div>
+
+          <div class="donut-wrapper">
+            <div class="donut-chart">
+              <svg viewBox="0 0 36 36" style="width:100%; height:100%; transform: rotate(-90deg);">
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#e2e8f0" stroke-width="3.8"/>
+                <!-- Erledigt 63% -->
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#38bdf8" stroke-width="3.8" stroke-dasharray="63, 100"/>
+                <!-- In Arbeit 12% -->
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#1d4ed8" stroke-width="3.8" stroke-dasharray="12, 100" stroke-dashoffset="-63"/>
+                <!-- In Review 8% -->
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#d97706" stroke-width="3.8" stroke-dasharray="8, 100" stroke-dashoffset="-75"/>
+              </svg>
+              <div class="donut-center-text">
+                <div class="donut-number">24</div>
+                <div class="donut-label">Aufgaben</div>
+              </div>
+            </div>
+
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background:#38bdf8;"></span> Erledigt</span>
+                <span class="legend-val">15</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background:#1d4ed8;"></span> In Arbeit</span>
+                <span class="legend-val">3</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background:#d97706;"></span> In Review</span>
+                <span class="legend-val">2</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background:#e2e8f0;"></span> Offen</span>
+                <span class="legend-val">4</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- WORK DISTRIBUTION TABLE -->
+      <div class="table-card">
+        <div class="table-header">
+          <div>
+            <h2 class="card-title">Wie verteilt sich die Arbeit?</h2>
+            <p class="card-sub">Zugeordnete Aufgaben pro Person – unabhängig vom Status.</p>
+          </div>
+          <span class="badge-live" id="work-distribution-total">Alle 24 Aufgaben zugeordnet</span>
+        </div>
+
+        <form id="work-distribution-form">
+          <table class="work-table">
+            <thead>
+              <tr>
+                <th>TEAMMITGLIED / ROLLE</th>
+                <th>GESAMT</th>
+                <th>ERLEDIGT</th>
+                <th>NOCH OFFEN</th>
+                <th>ANTEIL AN ALLEN AUFGABEN</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="avatar">LH</div>
+                  <div>
+                    <div class="user-name-title">Lena Hoffmann</div>
+                    <div class="user-role-sub">Product Owner</div>
+                  </div>
+                </div>
+              </td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="6" aria-label="Gesamtaufgaben Lena Hoffmann" required></td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="4" aria-label="Erledigte Aufgaben Lena Hoffmann" required></td>
+              <td><input class="work-number-input work-derived-input" type="number" value="2" aria-label="Noch offene Aufgaben Lena Hoffmann" readonly></td>
+              <td>
+                <div class="progress-bar-cell">
+                  <div class="table-progress-bar">
+                    <div class="table-progress-fill"></div>
+                  </div>
+                  <input class="work-share-input work-derived-input" type="number" value="25" aria-label="Anteil aller Aufgaben Lena Hoffmann in Prozent" readonly> %
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+                  <div>
+                    <div class="user-name-title">Amir Yilmaz</div>
+                    <div class="user-role-sub">Developer</div>
+                  </div>
+                </div>
+              </td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="7" aria-label="Gesamtaufgaben Amir Yilmaz" required></td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="4" aria-label="Erledigte Aufgaben Amir Yilmaz" required></td>
+              <td><input class="work-number-input work-derived-input" type="number" value="3" aria-label="Noch offene Aufgaben Amir Yilmaz" readonly></td>
+              <td>
+                <div class="progress-bar-cell">
+                  <div class="table-progress-bar">
+                    <div class="table-progress-fill"></div>
+                  </div>
+                  <input class="work-share-input work-derived-input" type="number" value="29" aria-label="Anteil aller Aufgaben Amir Yilmaz in Prozent" readonly> %
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+                  <div>
+                    <div class="user-name-title">Mia Schneider</div>
+                    <div class="user-role-sub">Scrum Master</div>
+                  </div>
+                </div>
+              </td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="5" aria-label="Gesamtaufgaben Mia Schneider" required></td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="3" aria-label="Erledigte Aufgaben Mia Schneider" required></td>
+              <td><input class="work-number-input work-derived-input" type="number" value="2" aria-label="Noch offene Aufgaben Mia Schneider" readonly></td>
+              <td>
+                <div class="progress-bar-cell">
+                  <div class="table-progress-bar">
+                    <div class="table-progress-fill"></div>
+                  </div>
+                  <input class="work-share-input work-derived-input" type="number" value="21" aria-label="Anteil aller Aufgaben Mia Schneider in Prozent" readonly> %
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-cell">
+                  <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+                  <div>
+                    <div class="user-name-title">Jonas Weber</div>
+                    <div class="user-role-sub">Developer</div>
+                  </div>
+                </div>
+              </td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="6" aria-label="Gesamtaufgaben Jonas Weber" required></td>
+              <td><input class="work-number-input" type="number" min="0" step="1" value="4" aria-label="Erledigte Aufgaben Jonas Weber" required></td>
+              <td><input class="work-number-input work-derived-input" type="number" value="2" aria-label="Noch offene Aufgaben Jonas Weber" readonly></td>
+              <td>
+                <div class="progress-bar-cell">
+                  <div class="table-progress-bar">
+                    <div class="table-progress-fill"></div>
+                  </div>
+                  <input class="work-share-input work-derived-input" type="number" value="25" aria-label="Anteil aller Aufgaben Jonas Weber in Prozent" readonly> %
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="work-distribution-actions">
+            <p id="work-distribution-feedback" role="status" aria-live="polite"></p>
+            <button class="btn-primary" type="submit">Änderungen speichern</button>
+          </div>
+        </form>
+
+        <form class="kanban-link-form" id="kanban-link-form">
+          <label for="kanban-board-url">Link zu eurem Kanban-Board</label>
+          <div class="kanban-link-controls">
+            <input
+              id="kanban-board-url"
+              name="kanban-board-url"
+              type="url"
+              placeholder="https://..."
+              autocomplete="url"
+              required
+            >
+            <button class="btn-primary" type="submit">Speichern</button>
+          </div>
+          <p class="kanban-link-feedback" id="kanban-link-feedback" role="status" aria-live="polite"></p>
+          <a class="kanban-board-link" id="kanban-board-link" target="_blank" rel="noopener noreferrer" hidden>
+            Kanban-Board öffnen <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </form>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/account-menu.js"></script>
+  <script>
+    const workDistributionStorageKey = "colibri-campus-lab-work-distribution";
+    const workDistributionForm = document.getElementById("work-distribution-form");
+    const workDistributionFeedback = document.getElementById("work-distribution-feedback");
+    const workDistributionTotal = document.getElementById("work-distribution-total");
+    const workDistributionRows = Array.from(document.querySelectorAll(".work-table tbody tr"));
+
+    function getWorkDistribution() {
+      return workDistributionRows.map((row) => {
+        const [totalInput, completedInput] = row.querySelectorAll(".work-number-input:not(.work-derived-input)");
+        return {
+          total: Number(totalInput.value),
+          completed: Number(completedInput.value),
+          open: 0,
+          share: 0,
+        };
+      });
+    }
+
+    function updateDerivedWorkDistribution(distribution) {
+      const totalTasks = distribution.reduce((sum, item) => sum + item.total, 0);
+      const remainders = distribution.map((item, index) => {
+        const exactShare = totalTasks > 0 ? item.total * 100 / totalTasks : 0;
+        const share = Math.floor(exactShare);
+        distribution[index].open = item.total - item.completed;
+        distribution[index].share = share;
+        return { index, remainder: exactShare - share };
+      });
+
+      let remainingShare = totalTasks > 0
+        ? 100 - distribution.reduce((sum, item) => sum + item.share, 0)
+        : 0;
+      remainders.sort((left, right) => right.remainder - left.remainder || left.index - right.index);
+      for (let index = 0; index < remainingShare; index += 1) {
+        distribution[remainders[index].index].share += 1;
+      }
+
+      workDistributionRows.forEach((row, index) => {
+        const [openInput] = row.querySelectorAll(".work-number-input.work-derived-input");
+        const shareInput = row.querySelector(".work-share-input");
+        openInput.value = String(distribution[index].open);
+        shareInput.value = String(distribution[index].share);
+        row.querySelector(".table-progress-fill").style.width = `${distribution[index].share}%`;
+      });
+      workDistributionTotal.textContent = `Alle ${totalTasks} Aufgaben zugeordnet`;
+      return distribution;
+    }
+
+    function isValidWorkDistribution(distribution) {
+      return Array.isArray(distribution)
+        && distribution.length === workDistributionRows.length
+        && distribution.every((item) =>
+          item
+          && Number.isInteger(item.total)
+          && item.total >= 0
+          && Number.isInteger(item.completed)
+          && item.completed >= 0
+          && item.completed <= item.total
+        );
+    }
+
+    function updateWorkDistribution() {
+      updateDerivedWorkDistribution(getWorkDistribution());
+    }
+
+    workDistributionRows.forEach((row) => {
+      row.querySelectorAll(".work-number-input:not(.work-derived-input)").forEach((input) => {
+        input.addEventListener("input", () => {
+          updateWorkDistribution();
+        });
+      });
+    });
+
+    try {
+      const savedDistribution = localStorage.getItem(workDistributionStorageKey);
+      if (savedDistribution) {
+        const parsedDistribution = JSON.parse(savedDistribution);
+        if (Array.isArray(parsedDistribution)
+          && parsedDistribution.length === workDistributionRows.length
+          && parsedDistribution.every((item) => item
+            && Number.isInteger(item.total)
+            && item.total >= 0
+            && Number.isInteger(item.completed)
+            && item.completed >= 0
+            && item.completed <= item.total)) {
+          workDistributionRows.forEach((row, index) => {
+            const inputs = row.querySelectorAll(".work-number-input:not(.work-derived-input)");
+            inputs[0].value = String(parsedDistribution[index].total);
+            inputs[1].value = String(parsedDistribution[index].completed);
+          });
+        } else {
+          workDistributionFeedback.textContent = "Die gespeicherten Zahlen sind ungültig. Bitte prüfe die Werte und speichere sie erneut.";
+        }
+      }
+    } catch (error) {
+      workDistributionFeedback.textContent = "Die gespeicherten Zahlen konnten nicht geladen werden.";
+      console.error("Arbeitsverteilung konnte nicht aus dem Browserspeicher geladen werden.", error);
+    }
+
+    updateWorkDistribution();
+
+    workDistributionForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!workDistributionForm.reportValidity()) {
+        workDistributionFeedback.textContent = "Bitte gib gültige ganze Zahlen ein. Erledigt darf nicht größer als Gesamt sein.";
+        return;
+      }
+
+      const distribution = updateDerivedWorkDistribution(getWorkDistribution());
+      if (!isValidWorkDistribution(distribution)) {
+        workDistributionFeedback.textContent = "Bitte prüfe die Zahlen: Erledigt darf nicht größer als Gesamt sein.";
+        return;
+      }
+
+      try {
+        localStorage.setItem(workDistributionStorageKey, JSON.stringify(distribution));
+        workDistributionFeedback.textContent = "Arbeitsverteilung gespeichert. Sie ist in diesem Browser verfügbar.";
+      } catch (error) {
+        workDistributionFeedback.textContent = "Die Zahlen konnten nicht gespeichert werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        console.error("Arbeitsverteilung konnte nicht im Browserspeicher gespeichert werden.", error);
+      }
+    });
+
+    const kanbanLinkStorageKey = "colibri-campus-lab-kanban-url";
+    const kanbanLinkForm = document.getElementById("kanban-link-form");
+    const kanbanUrlInput = document.getElementById("kanban-board-url");
+    const kanbanLinkFeedback = document.getElementById("kanban-link-feedback");
+    const kanbanBoardLink = document.getElementById("kanban-board-link");
+
+    function isValidKanbanUrl(value) {
+      try {
+        const url = new URL(value);
+        return url.protocol === "http:" || url.protocol === "https:";
+      } catch {
+        return false;
+      }
+    }
+
+    function showKanbanLink(value) {
+      kanbanUrlInput.value = value;
+      kanbanBoardLink.href = value;
+      kanbanBoardLink.hidden = false;
+    }
+
+    try {
+      const savedKanbanUrl = localStorage.getItem(kanbanLinkStorageKey);
+      if (savedKanbanUrl && isValidKanbanUrl(savedKanbanUrl)) {
+        showKanbanLink(savedKanbanUrl);
+      } else if (savedKanbanUrl) {
+        kanbanLinkFeedback.textContent = "Der gespeicherte Link ist ungültig. Bitte gib einen gültigen HTTP- oder HTTPS-Link ein.";
+      }
+    } catch (error) {
+      kanbanLinkFeedback.textContent = "Der gespeicherte Link konnte nicht geladen werden.";
+      console.error("Kanban-Link konnte nicht aus dem Browserspeicher geladen werden.", error);
+    }
+
+    kanbanLinkForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const url = kanbanUrlInput.value.trim();
+
+      if (!isValidKanbanUrl(url)) {
+        kanbanLinkFeedback.textContent = "Bitte gib einen gültigen HTTP- oder HTTPS-Link ein.";
+        return;
+      }
+
+      try {
+        localStorage.setItem(kanbanLinkStorageKey, url);
+        showKanbanLink(url);
+        kanbanLinkFeedback.textContent = "Link gespeichert. Er ist in diesem Browser verfügbar.";
+      } catch (error) {
+        kanbanLinkFeedback.textContent = "Der Link konnte nicht gespeichert werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        console.error("Kanban-Link konnte nicht im Browserspeicher gespeichert werden.", error);
+      }
+    });
+  </script>
+</body>
+</html>

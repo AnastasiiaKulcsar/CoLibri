@@ -1,0 +1,201 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        *,
+        *::before,
+        *::after {
+            border-radius: 0 !important;
+        }
+        /* Custom colors matching the image */
+        .bg-sidebar {
+            background-color: #132b3f;
+        }
+        .bg-main {
+            background-color: #f3f7fa;
+        }
+        .text-sidebar-muted {
+            color: #8da4b8;
+        }
+        .bg-card {
+            background-color: #ffffff;
+        }
+        .btn-primary {
+            background-color: #72c1f1;
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #5bb3e8;
+        }
+        .bg-invite {
+            background-color: #eaf4fb;
+        }
+        .border-custom {
+            border-color: #e2e8f0;
+        }
+
+        @media (min-width: 1280px) and (min-height: 650px) {
+            .login-sidebar {
+                width: 350px;
+                padding: 24px;
+            }
+
+            .login-sidebar .mb-12 {
+                margin-bottom: 20px;
+            }
+
+            .login-sidebar h1 {
+                font-size: 1.75rem;
+                margin-bottom: 10px;
+            }
+
+            .login-sidebar .mb-6 {
+                margin-bottom: 12px;
+            }
+
+            .login-sidebar .mb-8 {
+                margin-bottom: 12px;
+            }
+
+            .login-sidebar img[src*="team-photo"] {
+                height: 180px;
+            }
+
+            .login-sidebar ul {
+                gap: 8px;
+                font-size: 12px;
+            }
+
+            .login-sidebar .mt-12 {
+                margin-top: 16px;
+            }
+
+            .login-main {
+                padding: 22px 28px;
+            }
+
+            .login-main .mb-8 {
+                margin-bottom: 16px;
+            }
+
+            .login-main #welcome-header {
+                margin-bottom: 20px;
+            }
+
+            .login-main #welcome-header h2 {
+                font-size: 1.65rem;
+                margin-bottom: 4px;
+            }
+
+            .login-main #registration-step {
+                gap: 16px;
+            }
+
+            .login-main #registration-step > div:first-child {
+                padding: 18px;
+            }
+
+            .login-main #registration-step h3 {
+                font-size: 1.05rem;
+            }
+
+            .login-main #registration-step form {
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .login-main #registration-step form > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 0;
+            }
+
+            .login-main #registration-step form label {
+                margin-bottom: 3px;
+            }
+
+            .login-main #registration-step form input:not([type="checkbox"]) {
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            .login-main #registration-step > div:last-child {
+                gap: 12px;
+            }
+
+            .login-main #registration-step > div:last-child > div {
+                padding: 16px;
+            }
+
+            .login-main #registration-step > div:last-child .mb-6 {
+                margin-bottom: 8px;
+            }
+
+            .login-main #registration-step > div:last-child .mb-4 {
+                margin-bottom: 8px;
+            }
+
+            .login-main footer {
+                margin-top: 16px;
+                padding-top: 10px;
+            }
+
+            .login-main #team-step {
+                padding: 20px;
+            }
+
+            .login-main #team-step > button {
+                margin-bottom: 14px;
+            }
+
+            .login-main #team-step > div {
+                margin-bottom: 14px;
+            }
+
+            .login-main #team-step form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .login-main #team-step form input,
+            .login-main #team-step form select {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }
+
+        @media (min-width: 640px) and (min-height: 650px) {
+            .team-create-main {
+                padding: 16px;
+            }
+
+            .team-create-card {
+                padding: 20px;
+            }
+
+            .team-create-card > img {
+                height: 120px;
+                margin-bottom: 12px;
+            }
+
+            .team-create-card > div:first-of-type {
+                margin-bottom: 14px;
+            }
+
+            .team-create-card > div:nth-of-type(2) {
+                margin-bottom: 14px;
+            }
+
+            .team-create-card form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .team-create-card form input,
+            .team-create-card form select {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+        }

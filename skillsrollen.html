@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Skills & Rollen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/skillsrollen.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Skills & Rollen</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="subtitle-tag">02 / TEAMKOMPETENZEN</div>
+          <h1 class="page-title">Eure Stärken. Die richtigen Rollen.</h1>
+          <p class="page-description">Lernt voneinander und verteilt Verantwortung so, dass alle wachsen können.</p>
+        </div>
+        <button class="btn-primary">
+          <i class="fa-solid fa-check"></i> Rollen speichern
+        </button>
+      </div>
+
+      <nav class="tabs-nav">
+        <a href="#" class="tab-item">Skills-Umfrage</a>
+        <a href="#" class="tab-item active">Team-Skills-Report</a>
+        <a href="#" class="tab-item">Rollenverteilung</a>
+      </nav>
+
+      <!-- TOP SECTION -->
+      <div class="grid-top">
+        
+        <!-- LEFT CARD: SKILL SURVEY -->
+        <div class="card">
+          <h2 class="card-title">Deine Skills-Umfrage</h2>
+          <p class="card-sub">Lena Hoffmann · Selbsteinschätzung</p>
+
+          <div class="scale-legend">
+            <span>1 = Erste Erfahrungen</span>
+            <span>5 = Sehr sicher</span>
+          </div>
+
+          <!-- Rating Items -->
+          <div class="rating-row">
+            <span class="rating-label">UX / Design</span>
+            <div class="rating-options">
+              <div class="rating-btn">1</div>
+              <div class="rating-btn">2</div>
+              <div class="rating-btn">3</div>
+              <div class="rating-btn">4</div>
+              <div class="rating-btn active">5</div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">Frontend</span>
+            <div class="rating-options">
+              <div class="rating-btn">1</div>
+              <div class="rating-btn">2</div>
+              <div class="rating-btn active">3</div>
+              <div class="rating-btn">4</div>
+              <div class="rating-btn">5</div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">Backend</span>
+            <div class="rating-options">
+              <div class="rating-btn active">1</div>
+              <div class="rating-btn">2</div>
+              <div class="rating-btn">3</div>
+              <div class="rating-btn">4</div>
+              <div class="rating-btn">5</div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">Recherche</span>
+            <div class="rating-options">
+              <div class="rating-btn">1</div>
+              <div class="rating-btn">2</div>
+              <div class="rating-btn">3</div>
+              <div class="rating-btn active">4</div>
+              <div class="rating-btn">5</div>
+            </div>
+          </div>
+
+          <div class="rating-row">
+            <span class="rating-label">Organisation</span>
+            <div class="rating-options">
+              <div class="rating-btn">1</div>
+              <div class="rating-btn">2</div>
+              <div class="rating-btn">3</div>
+              <div class="rating-btn active">4</div>
+              <div class="rating-btn">5</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Was möchtest du lernen?</label>
+            <input type="text" class="form-control" value="Frontend-Prototyping & Usability-Tests">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Welche Rolle interessiert dich?</label>
+            <select class="form-control">
+              <option>Product Owner</option>
+            </select>
+          </div>
+
+          <div class="form-footer">
+            <div class="status-link"><i class="fa-solid fa-check"></i> Eingereicht</div>
+            <button class="btn-outline">Aktualisieren</button>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD: TEAM SKILLS REPORT -->
+        <div class="card">
+          <h2 class="card-title">Team-Skills-Report</h2>
+          <p class="card-sub">4 von 4 Umfragen ausgefüllt · Skala von 1 bis 5</p>
+
+          <table class="team-table">
+            <thead>
+              <tr>
+                <th>Teammitglied</th>
+                <th>UX / Design</th>
+                <th>Frontend</th>
+                <th>Backend</th>
+                <th>Recherche</th>
+                <th>Organisation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="team-user">
+                    <div class="avatar" style="width:24px; height:24px; font-size:10px;">LH</div> Lena
+                  </div>
+                </td>
+                <td><div class="score-cell high">5</div></td>
+                <td><div class="score-cell">3</div></td>
+                <td><div class="score-cell">1</div></td>
+                <td><div class="score-cell high">4</div></td>
+                <td><div class="score-cell high">4</div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="team-user">
+                    <div class="avatar" style="width:24px; height:24px; font-size:10px; background:#fef3c7; color:#d97706;">AY</div> Amir
+                  </div>
+                </td>
+                <td><div class="score-cell">2</div></td>
+                <td><div class="score-cell high">4</div></td>
+                <td><div class="score-cell high">5</div></td>
+                <td><div class="score-cell">2</div></td>
+                <td><div class="score-cell">3</div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="team-user">
+                    <div class="avatar" style="width:24px; height:24px; font-size:10px; background:#fce7f3; color:#db2777;">MS</div> Mia
+                  </div>
+                </td>
+                <td><div class="score-cell">3</div></td>
+                <td><div class="score-cell">2</div></td>
+                <td><div class="score-cell">2</div></td>
+                <td><div class="score-cell high">5</div></td>
+                <td><div class="score-cell high">5</div></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="team-user">
+                    <div class="avatar" style="width:24px; height:24px; font-size:10px; background:#dcfce7; color:#15803d;">JW</div> Jonas
+                  </div>
+                </td>
+                <td><div class="score-cell">3</div></td>
+                <td><div class="score-cell high">5</div></td>
+                <td><div class="score-cell high">4</div></td>
+                <td><div class="score-cell">3</div></td>
+                <td><div class="score-cell">3</div></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="stat-label">Design & Recherche</div>
+              <div class="stat-value">3,5 / 5</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 70%;"></div></div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Entwicklung</div>
+              <div class="stat-value">3,3 / 5</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 66%;"></div></div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">Organisation</div>
+              <div class="stat-value">3,8 / 5</div>
+              <div class="stat-bar"><div class="stat-fill" style="width: 76%;"></div></div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <i class="fa-regular fa-lightbulb" style="font-size:16px;"></i>
+            <span><strong>Backend-Know-how bündeln:</strong> Amir und Jonas bilden ein gutes Pair-Programming-Team.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- BOTTOM SECTION: ROLES -->
+      <div class="section-header">
+        <div>
+          <h2 style="font-size:18px; font-weight:700;">Verantwortung gemeinsam verteilen</h2>
+          <p style="font-size:12px; color:var(--text-muted);">Vorschläge auf Basis eurer Skills. Rollen können jederzeit geändert werden.</p>
+        </div>
+        <span class="badge-green">4 Personen zugeordnet</span>
+      </div>
+
+      <div class="roles-grid">
+        <div class="role-card">
+          <div>
+            <div class="role-header">
+              <i class="fa-solid fa-link" style="color:var(--text-muted); font-size:14px;"></i> Scrum Master
+            </div>
+            <p class="role-desc">Moderiert das Team, löst Hindernisse und behält den Prozess im Blick.</p>
+          </div>
+          <div>
+            <select class="role-select">
+              <option>Mia Schneider</option>
+            </select>
+            <div class="role-footer">Organisation 5/5 · Recherche 5/5</div>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div>
+            <div class="role-header">
+              <i class="fa-regular fa-compass" style="color:var(--text-muted); font-size:14px;"></i> Product Owner (PO)
+            </div>
+            <p class="role-desc">Schärft die Vision, priorisiert das Backlog und vertritt die Nutzenden.</p>
+          </div>
+          <div>
+            <select class="role-select">
+              <option>Lena Hoffmann</option>
+            </select>
+            <div class="role-footer">UX / Design 5/5 · Recherche 4/5</div>
+          </div>
+        </div>
+
+        <div class="role-card">
+          <div>
+            <div class="role-header">
+              <i class="fa-solid fa-code" style="color:var(--text-muted); font-size:14px;"></i> Developer
+            </div>
+            <p class="role-desc">Entwickelt und testet die Lösung. Arbeitet gemeinsam am Prototyp.</p>
+          </div>
+          <div>
+            <select class="role-select">
+              <option>Amir Yilmaz & Jonas Weber</option>
+            </select>
+            <div class="role-footer">Backend 5/5 · Frontend 5/5</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/account-menu.js"></script>
+</body>
+</html>

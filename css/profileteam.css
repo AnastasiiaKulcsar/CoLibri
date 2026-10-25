@@ -1,0 +1,41 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Custom accent color and button styling matching design */
+        .btn-primary {
+            background-color: #7dd3fc;
+            color: #0369a1;
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #38bdf8;
+            color: #0c4a6e;
+        }
+
+        .btn-primary-dark {
+            background-color: #60a5fa;
+            color: #ffffff;
+            transition: all 0.15s ease-in-out;
+        }
+        .btn-primary-dark:hover {
+            background-color: #3b82f6;
+        }
+
+        /* Custom subtle borders and shadow */
+        .card-border {
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri – Einstellungen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/einstellungen.css">
+</head>
+<body class="settings-page">
+  <header class="settings-header">
+    <a class="settings-brand" href="profileteam.html">
+      <img src="resources/logo.svg" alt="" width="32" height="32">
+      <span>CoLibri</span>
+    </a>
+    <a class="settings-back" href="profileteam.html">Zurück zum Workspace</a>
+  </header>
+
+  <main class="settings-main">
+    <p class="settings-eyebrow">Dein CoLibri</p>
+    <h1>Einstellungen</h1>
+    <p class="settings-intro">Passe CoLibri an deine Vorlieben an. Das Design wird für die gesamte App gespeichert.</p>
+
+    <section class="settings-card" aria-labelledby="theme-heading">
+      <h2 id="theme-heading">Erscheinungsbild</h2>
+      <p>Wähle ein helles oder dunkles Design. Deine Auswahl gilt auch auf den anderen CoLibri-Seiten in diesem Browser.</p>
+      <fieldset class="theme-options">
+        <legend>Design auswählen</legend>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="light">
+          <span class="theme-preview theme-preview-light" aria-hidden="true"><span></span></span>
+          <span><strong>Hell</strong><small>Heller Hintergrund</small></span>
+        </label>
+        <label class="theme-option">
+          <input type="radio" name="theme" value="dark">
+          <span class="theme-preview theme-preview-dark" aria-hidden="true"><span></span></span>
+          <span><strong>Dunkel</strong><small>Augenschonendes dunkles Design</small></span>
+        </label>
+      </fieldset>
+      <p class="settings-feedback" data-theme-feedback role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="settings-help" aria-labelledby="help-heading">
+      <h2 id="help-heading">Brauchst du Hilfe?</h2>
+      <p>Unser Support hilft dir gerne weiter.</p>
+      <a href="mailto:supportcolibri@team.net">supportcolibri@team.net</a>
+    </section>
+  </main>
+
+  <footer class="settings-footer">CoLibri · Einstellungen</footer>
+</body>
+</html>

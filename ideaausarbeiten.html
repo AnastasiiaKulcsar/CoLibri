@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/theme.js"></script>
+  <title>CoLibri - Idee ausarbeiten</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/ideaausarbeiten.css">
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="resources/logo.svg" alt="" width="28" height="28" class="rounded-md object-contain">
+      <span>CoLibri</span>
+    </div>
+
+    <div class="project-selector" aria-label="Projekt und Team">
+      <div class="project-selector-info">
+        <div class="project-title">Team: Campus Lab</div>
+      </div>
+    </div>
+
+    <div class="nav-label">DEIN PROJEKT</div>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="profileteam.html">
+          <span class="link-left"><i class="fa-regular fa-user"></i> Team & Profil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="brainstorming.html">
+          <span class="link-left"><i class="fa-regular fa-lightbulb"></i> Brainstorming</span>
+          <span class="badge-count">6</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="ideenabstimmung.html">
+          <span class="link-left"><i class="fa-regular fa-check-square"></i> Ideenabstimmung</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="ideaausarbeiten.html">
+          <span class="link-left"><i class="fa-solid fa-wand-magic-sparkles"></i> Idee ausarbeiten</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="report.html">
+          <span class="link-left"><i class="fa-regular fa-file-lines"></i> Projektbericht</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="progress-box">
+        <div class="progress-title">Gemeinsam zum Prototyp</div>
+        <div class="progress-date" data-team-deadline>Abgabe am 30. Oktober</div>
+        <button type="button" data-toggle-team-deadline class="progress-date-button">Abgabedatum ändern</button>
+        <form data-team-deadline-form hidden class="team-deadline-form">
+          <label for="team-deadline-input">Neues Team-Abgabedatum</label>
+          <input id="team-deadline-input" type="date" required>
+          <button type="submit">Speichern</button>
+          <p data-team-deadline-feedback role="status" aria-live="polite"></p>
+        </form>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-status">15 von 24 Aufgaben erledigt</div>
+      </div>
+
+      <a href="mailto:supportcolibri@team.net" style="text-decoration:none; color: var(--text-muted); font-size:12px; display:flex; align-items:center; gap:8px;">
+        <i class="fa-regular fa-circle-question"></i> Hilfe & Feedback
+      </a>
+
+      <details class="user-profile" data-account-menu style="position:relative;">
+        <summary style="cursor:pointer; list-style:none;">
+        <div class="user-info">
+          <div class="avatar">LH</div>
+          <div>
+            <div style="font-weight:600; font-size:12px;">Lena Hoffmann</div>
+            <div style="font-size:10px; color: var(--text-muted);">Dein Workspace</div>
+          </div>
+        </div>
+        <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="account-dropdown">
+          <a class="account-menu-item" href="profileteam.html">Team &amp; Profil</a>
+          <a class="account-menu-item" href="einstellungen.html">Einstellungen</a>
+          <a class="account-menu-item" href="abonnement.html" target="_blank" rel="noopener noreferrer">Abonnement</a>
+          <p class="account-menu-feedback" data-account-feedback role="status" aria-live="polite"></p>
+        </div>
+      </details>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <div class="breadcrumb">
+        <span>CampusCycle</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+        <span style="color: var(--text-main); font-weight: 500;">Idee ausarbeiten</span>
+      </div>
+      <div class="header-actions">
+        <div class="avatar-group">
+          <div class="avatar">LH</div>
+          <div class="avatar" style="background:#fef3c7; color:#d97706;">AY</div>
+          <div class="avatar" style="background:#fce7f3; color:#db2777;">MS</div>
+          <div class="avatar" style="background:#dcfce7; color:#15803d;">JW</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="subtitle-tag">03 / IDEE AUSARBEITEN</div>
+          <h1 class="page-title">Versteht das Problem. Nicht nur die Idee.</h1>
+          <p class="page-description">CampusCycle - Schärft euren Fokus aus der Perspektive eurer Nutzenden.</p>
+        </div>
+      </div>
+      <p id="idea-save-feedback" class="idea-save-feedback" role="status" aria-live="polite"></p>
+
+      <!-- TOP SECTION GRID -->
+      <div class="grid-top">
+        
+        <!-- PROBLEM STATEMENT CARD -->
+        <div class="card">
+          <h2 class="card-title">Euer Problem Statement</h2>
+          <p class="card-sub">Wer braucht was – und warum?</p>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Für wen?</label>
+              <div class="form-input-box" contenteditable="true" role="textbox" aria-label="Für wen?" data-editable-field="problem-audience">Studierende ohne eigenes Fahrrad</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Welches Bedürfnis?</label>
+              <div class="form-input-box" contenteditable="true" role="textbox" aria-label="Welches Bedürfnis?" data-editable-field="problem-need">Bezahlbar und flexibel mobil sein</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Warum ist das wichtig?</label>
+            <div class="form-textarea-box" contenteditable="true" role="textbox" aria-label="Warum ist das wichtig?" data-editable-field="problem-importance">Hohe Anschaffungskosten und fehlende Reparaturangebote erschweren nachhaltige Mobilität im Studienalltag.</div>
+          </div>
+
+          <!-- FOCUS BOX -->
+          <div class="focus-box">
+            <div class="focus-label">UNSER GEMEINSAMER FOKUS</div>
+            <div class="focus-text" contenteditable="true" role="textbox" aria-label="Unser gemeinsamer Fokus" data-editable-field="problem-focus">Studierende brauchen einen vertrauenswürdigen Zugang zu günstigen Fahrrädern und Reparaturhilfe, damit nachhaltige Mobilität im Campusalltag einfach wird.</div>
+          </div>
+
+          <div class="problem-save-actions">
+            <button class="btn-primary" type="button" data-save-idea>
+              <i class="fa-solid fa-check"></i> Änderungen speichern
+            </button>
+          </div>
+        </div>
+
+        <!-- PERSONA CARD (RIGHT) -->
+        <div class="card">
+          <h2 class="card-title">Für wen wir gestalten</h2>
+          <p class="card-sub" contenteditable="true" role="textbox" aria-label="Beschreibung der Persona" data-editable-field="persona-card-description">Persona aus 8 Campus-Interviews</p>
+
+          <div class="persona-avatar-box">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+          </div>
+
+          <div class="persona-name" contenteditable="true" role="textbox" aria-label="Name und Alter der Persona" data-editable-field="persona-name">Alex, 22</div>
+          <div class="persona-sub" contenteditable="true" role="textbox" aria-label="Studiensemester der Persona" data-editable-field="persona-semester">Studiert im 3. Semester</div>
+          <span class="persona-pill" contenteditable="true" role="textbox" aria-label="Zielgruppen-Kennzeichnung" data-editable-field="persona-pill">Primäre Zielgruppe</span>
+
+          <div class="persona-quote" contenteditable="true" role="textbox" aria-label="Zitat der Persona" data-editable-field="persona-quote">
+            „Ich will unkompliziert mobil sein – ohne gleich ein neues Rad kaufen zu müssen.“
+          </div>
+
+          <div class="persona-details">
+            <div class="persona-detail-item">
+              <i class="fa-solid fa-location-dot" style="width:14px; color:#94a3b8;"></i>
+              <span contenteditable="true" role="textbox" aria-label="Wohnort der Persona" data-editable-field="persona-location">Wohnt 4 km vom Campus entfernt</span>
+            </div>
+            <div class="persona-detail-item">
+              <i class="fa-regular fa-calendar" style="width:14px; color:#94a3b8;"></i>
+              <span contenteditable="true" role="textbox" aria-label="Budget der Persona" data-editable-field="persona-budget">Begrenztes monatliches Budget</span>
+            </div>
+            <div class="persona-detail-item">
+              <i class="fa-solid fa-leaf" style="width:14px; color:#94a3b8;"></i>
+              <span contenteditable="true" role="textbox" aria-label="Ziel der Persona" data-editable-field="persona-goal">Möchte nachhaltig unterwegs sein</span>
+            </div>
+          </div>
+
+          <div class="problem-save-actions">
+            <button class="btn-primary" type="button" data-save-idea>
+              <i class="fa-solid fa-check"></i> Änderungen speichern
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EMPATHY MAP SECTION -->
+      <div class="card" style="margin-bottom:24px;">
+        <div class="empathy-header">
+          <div>
+            <h2 class="card-title">Empathy Map</h2>
+            <p class="card-sub" style="margin-bottom:0;" contenteditable="true" role="textbox" aria-label="Beschreibung der Empathy Map" data-editable-field="empathy-description">Was bewegt Alex? Beobachtungen statt Annahmen.</p>
+          </div>
+        </div>
+
+        <div class="empathy-grid">
+          <!-- COL 1: SAGT -->
+          <div class="empathy-col">
+            <div class="empathy-col-title">
+              <i class="fa-regular fa-comment" style="color:var(--primary-dark);"></i> <span contenteditable="true" role="textbox" aria-label="Kategorie Sagt" data-editable-field="empathy-label-says">Sagt</span>
+            </div>
+            <div class="sticky-note sticky-blue" contenteditable="true" role="textbox" aria-label="Sagt, Beobachtung 1" data-editable-field="empathy-says-1">
+              „Ein eigenes Rad ist gerade einfach zu teuer.“
+            </div>
+            <div class="sticky-note sticky-blue" contenteditable="true" role="textbox" aria-label="Sagt, Beobachtung 2" data-editable-field="empathy-says-2">
+              „Ich würde gern teilen – aber nur mit Leuten, denen ich vertraue.“
+            </div>
+          </div>
+
+          <!-- COL 2: DENKT -->
+          <div class="empathy-col">
+            <div class="empathy-col-title">
+              <i class="fa-regular fa-compass" style="color:var(--primary-dark);"></i> <span contenteditable="true" role="textbox" aria-label="Kategorie Denkt" data-editable-field="empathy-label-thinks">Denkt</span>
+            </div>
+            <div class="sticky-note sticky-gray" contenteditable="true" role="textbox" aria-label="Denkt, Beobachtung 1" data-editable-field="empathy-thinks-1">
+              Wie komme ich nach dem Seminar schnell und günstig nach Hause?
+            </div>
+            <div class="sticky-note sticky-gray" contenteditable="true" role="textbox" aria-label="Denkt, Beobachtung 2" data-editable-field="empathy-thinks-2">
+              Ist das geliehene Fahrrad wirklich sicher?
+            </div>
+          </div>
+
+          <!-- COL 3: TUT -->
+          <div class="empathy-col">
+            <div class="empathy-col-title">
+              <i class="fa-solid fa-person-walking" style="color:var(--primary-dark);"></i> <span contenteditable="true" role="textbox" aria-label="Kategorie Tut" data-editable-field="empathy-label-does">Tut</span>
+            </div>
+            <div class="sticky-note sticky-green" contenteditable="true" role="textbox" aria-label="Tut, Beobachtung 1" data-editable-field="empathy-does-1">
+              Fragt in Gruppenchats nach einem Fahrrad oder Reparaturhilfe.
+            </div>
+            <div class="sticky-note sticky-green" contenteditable="true" role="textbox" aria-label="Tut, Beobachtung 2" data-editable-field="empathy-does-2">
+              Fährt mit dem Bus oder lässt das kaputte Rad stehen.
+            </div>
+          </div>
+
+          <!-- COL 4: FÜHLT -->
+          <div class="empathy-col">
+            <div class="empathy-col-title">
+              <i class="fa-regular fa-heart" style="color:var(--primary-dark);"></i> <span contenteditable="true" role="textbox" aria-label="Kategorie Fühlt" data-editable-field="empathy-label-feels">Fühlt</span>
+            </div>
+            <div class="sticky-note sticky-pink" contenteditable="true" role="textbox" aria-label="Fühlt, Beobachtung 1" data-editable-field="empathy-feels-1">
+              Frustriert über hohe Kosten und umständliche Angebote.
+            </div>
+            <div class="sticky-note sticky-pink" contenteditable="true" role="textbox" aria-label="Fühlt, Beobachtung 2" data-editable-field="empathy-feels-2">
+              Motiviert, nachhaltiger zu leben und Teil einer Community zu sein.
+            </div>
+          </div>
+        </div>
+
+        <div class="pain-gain-row">
+          <div class="pain-gain-box">
+            <h4 contenteditable="true" role="textbox" aria-label="Überschrift Hürden" data-editable-field="empathy-pains-title">HÜRDEN</h4>
+            <p contenteditable="true" role="textbox" aria-label="Hürden" data-editable-field="persona-pains">Hohe Kosten · Fehlendes Vertrauen · Keine Reparaturhilfe</p>
+          </div>
+          <div class="pain-gain-box">
+            <h4 contenteditable="true" role="textbox" aria-label="Überschrift Wünsche" data-editable-field="empathy-gains-title">WÜNSCHE</h4>
+            <p contenteditable="true" role="textbox" aria-label="Wünsche" data-editable-field="persona-gains">Günstiger Zugang · Sichere Ausleihe · Einander helfen</p>
+          </div>
+        </div>
+        <div class="empathy-save-actions">
+          <button class="btn-primary" type="button" data-save-idea>
+            <i class="fa-solid fa-check"></i> Änderungen speichern
+          </button>
+        </div>
+        <p class="idea-save-feedback" role="status" aria-live="polite" data-idea-save-feedback></p>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/account-menu.js"></script>
+  <script>
+    const ideaContentStorageKey = "colibri-campus-lab-idea-work-content";
+    const editableIdeaFields = Array.from(document.querySelectorAll("[data-editable-field]"));
+    const ideaSaveFeedback = document.getElementById("idea-save-feedback");
+    const empathySaveFeedback = document.querySelector("[data-idea-save-feedback]");
+
+    function saveIdeaContent() {
+      const content = Object.fromEntries(
+        editableIdeaFields.map((field) => [field.dataset.editableField, field.textContent.trim()])
+      );
+
+      try {
+        localStorage.setItem(ideaContentStorageKey, JSON.stringify(content));
+        ideaSaveFeedback.textContent = "Änderungen gespeichert. Sie sind in diesem Browser verfügbar.";
+        empathySaveFeedback.textContent = "Änderungen gespeichert.";
+      } catch (error) {
+        ideaSaveFeedback.textContent = "Änderungen konnten nicht gespeichert werden. Bitte prüfe die Browserspeicher-Einstellungen.";
+        empathySaveFeedback.textContent = "Änderungen konnten nicht gespeichert werden.";
+        console.error("Ideen-Ausarbeiten-Inhalte konnten nicht gespeichert werden.", error);
+      }
+    }
+
+    try {
+      const savedContent = localStorage.getItem(ideaContentStorageKey);
+      if (savedContent) {
+        const parsedContent = JSON.parse(savedContent);
+        if (parsedContent && typeof parsedContent === "object" && !Array.isArray(parsedContent)) {
+          editableIdeaFields.forEach((field) => {
+            const value = parsedContent[field.dataset.editableField];
+            if (typeof value === "string") {
+              field.textContent = value;
+            }
+          });
+        } else {
+          ideaSaveFeedback.textContent = "Gespeicherte Inhalte konnten nicht geladen werden, da das Datenformat ungültig ist.";
+        }
+      }
+    } catch (error) {
+      ideaSaveFeedback.textContent = "Gespeicherte Inhalte konnten nicht geladen werden.";
+      console.error("Ideen-Ausarbeiten-Inhalte konnten nicht aus dem Browserspeicher geladen werden.", error);
+    }
+
+    document.querySelectorAll("[data-save-idea]").forEach((button) => {
+      button.addEventListener("click", saveIdeaContent);
+    });
+  </script>
+</body>
+</html>
