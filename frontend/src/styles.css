@@ -121,18 +121,13 @@ a,button { -webkit-tap-highlight-color: transparent; }
 .content-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
 .content-grid>.card { min-width: 0; }
 .idea-list { display: grid; gap: 10px; }
-.idea-card,.persona-card,.task-card,.stat-card { padding: 15px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; }
-.idea-card p,.task-card small { display: block; margin: 6px 0 0; color: #64748b; font-size: 12px; }
+.idea-card,.persona-card,.stat-card { padding: 15px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; }
+.idea-card p { display: block; margin: 6px 0 0; color: #64748b; font-size: 12px; }
 .persona-card blockquote { margin: 16px 0; color: #475569; line-height: 1.6; }
-.stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-.stat-grid .stat-card strong,.stat-card strong { display: block; margin: 10px 0; color: #0f172a; font-size: 27px; }
-.stat-grid .stat-card span,.stat-card p { color: #64748b; font-size: 11px; }
+.stat-card strong { display: block; margin: 10px 0; color: #0f172a; font-size: 27px; }
+.stat-card p { color: #64748b; font-size: 11px; }
 .vote-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-.kanban-board { display: grid; grid-template-columns: repeat(3,minmax(180px,1fr)); gap: 16px; overflow-x: auto; }
-.kanban-column { min-width: 180px; padding: 14px; border-radius: 13px; background: #f8fafc; }
-.kanban-column h2 { display: flex; justify-content: space-between; margin: 0 0 12px; font-size: 13px; }
-.task-card { display: grid; gap: 10px; margin-bottom: 10px; }
-.task-card select { padding: 6px; border: 1px solid #e5e7eb; border-radius: 7px; background: white; font-size: 11px; }
+
 .auth-layout { min-height: 100vh; display: grid; grid-template-columns: minmax(340px,430px) 1fr; background: #f3f7fa; }
 .auth-sidebar { display: flex; flex-direction: column; padding: 34px 40px; background: #132b3f; color: white; }
 .auth-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 38px; color: inherit; text-decoration: none; font-size: 22px; font-weight: 700; }
@@ -193,7 +188,6 @@ html[data-theme="dark"] .card,
 html[data-theme="dark"] .settings-panel,
 html[data-theme="dark"] .idea-card,
 html[data-theme="dark"] .stat-card,
-html[data-theme="dark"] .task-card,
 html[data-theme="dark"] .persona-card {
   border-color: #344454;
   background: #1c2835;
@@ -244,4 +238,4 @@ html[data-theme="dark"] .account-menu-item:focus-visible {
 
 @media (max-width: 980px) { .profile-grid,.auth-grid { grid-template-columns: 1fr; } .profile-card { min-height: auto; } .vote-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 800px) { .workspace { grid-template-columns: 1fr; } .workspace .sidebar { gap: 14px; } .main-nav { grid-template-columns: repeat(2,minmax(0,1fr)); } .sidebar-bottom { margin-top: 0; } .main-area { padding: 18px 14px; } }
-@media (max-width: 650px) { .page-content { padding: 20px 14px; } .topbar { min-height: 54px; } .topbar-right { display: none; } .content-grid,.vote-grid { grid-template-columns: 1fr; } .member-row { align-items: flex-start; flex-direction: column; } .member-actions { justify-content: flex-start; } .invite-form { grid-template-columns: 1fr; } .invite-form .primary-button,.invite-form .feedback { grid-column: auto; } .auth-layout { grid-template-columns: 1fr; } .auth-sidebar { padding: 26px 22px; } .auth-sidebar .team-photo { height: 260px; } .auth-footer { display: none; } .auth-main { padding: 24px 15px; } .invite-row { grid-template-columns: 1fr; } .stat-grid { grid-template-columns: 1fr; } .team-create-layout { padding: 14px; } .team-create-card { padding: 18px; } .team-create-photo { height: 220px; } }
+@media (max-width: 650px) { .page-content { padding: 20px 14px; } .topbar { min-height: 54px; } .topbar-right { display: none; } .content-grid,.vote-grid { grid-template-columns: 1fr; } .member-row { align-items: flex-start; flex-direction: column; } .member-actions { justify-content: flex-start; } .invite-form { grid-template-columns: 1fr; } .invite-form .primary-button,.invite-form .feedback { grid-column: auto; } .auth-layout { grid-template-columns: 1fr; } .auth-sidebar { padding: 26px 22px; } .auth-sidebar .team-photo { height: 260px; } .auth-footer { display: none; } .auth-main { padding: 24px 15px; } .invite-row { grid-template-columns: 1fr; } .team-create-layout { padding: 14px; } .team-create-card { padding: 18px; } .team-create-photo { height: 220px; } }

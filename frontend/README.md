@@ -1,6 +1,8 @@
 # CoLibri Angular Frontend
 
-Angular 21 frontend for the CoLibri team workspace. The original static HTML mockups remain at the repository root; the routed Angular application lives in this folder.
+Angular 21 frontend for the CoLibri team workspace. The original standalone HTML pages, CSS, and JavaScript remain at the repository root as references for the application's features and interactions. The Angular routes in this folder should preserve the relevant user-visible functionality, but do not need to be pixel-perfect copies.
+
+When changing a screen, compare its Angular route with the corresponding root-level HTML page so forms, actions, navigation, validation, and feedback are not missed. A clean, consistent, responsive layout is sufficient. Work one screen at a time and keep the original static files as references.
 
 ## Development
 
@@ -18,7 +20,10 @@ Open `http://localhost:4200/`. Build a production bundle with `npm run build`.
 - `/login` — registration, invitation demo, and team creation flow
 - `/team-erstellen` — standalone team creation form
 - `/profileteam` — profile, team member roles, invitations, and member management
-- `/brainstorming`, `/skillsrollen`, `/ideenabstimmung`, `/ideaausarbeiten`, `/kanban`, `/report` — workspace views
+- `/brainstorming`, `/ideenabstimmung`, `/ideaausarbeiten`, `/report` — workspace views
+
+Kanban is not part of the Angular application. The root-level `kanban.html` remains available as a static design reference.
+Skills & Rollen is not part of the Angular application. The root-level `skillsrollen.html` remains available as a static design reference.
 
 The workspace sidebar, header, and account menu are shared across workspace routes.
 
